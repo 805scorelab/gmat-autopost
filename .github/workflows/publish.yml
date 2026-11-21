@@ -13,7 +13,7 @@ on:
     #   21:00     02:00     01:00     reel
     # Recompute these windows whenever the slots change.
     - cron: "*/10 1-2,11-13,16-17,22-23 * * *"
-    - cron: "7 * * * *"
+    - cron: "7 * * * *"      # the hourly sweep: it waits inside the run for any post due before the next sweep
   workflow_dispatch:
     inputs:
       mode:
@@ -44,6 +44,7 @@ concurrency:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    timeout-minutes: 80
     env:
       IG_USER_ID: ${{ vars.IG_USER_ID }}
       IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
@@ -72,7 +73,8 @@ jobs:
 
       - name: Publish anything due
         if: github.event_name != 'workflow_dispatch' || inputs.mode == 'publish'
-        run: python publish.py
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ]; then python publish.py --wait 62; else python publish.py; fi
 
       - name: Record what was published
         if: always() && (github.event_name != 'workflow_dispatch' || inputs.mode == 'publish' || inputs.mode == 'insights')

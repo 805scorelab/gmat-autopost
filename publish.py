@@ -391,6 +391,19 @@ def main():
         print("performance recorded")
         return 0
 
+    if "--wait" in sys.argv:
+        # GitHub drops many cron runs on quiet repos (21 Nov: the */10 window around 23:30 UTC never fired and the
+        # 18:30 ET carousel went out 12 minutes late by hand). The hourly run is the one that does fire, so it waits
+        # here for the next post due within the hour and publishes it on time.
+        limit = float(sys.argv[sys.argv.index("--wait") + 1]) * 60
+        upcoming = sorted(utc(p["scheduled_utc"]) for p in manifest["posts"]
+                          if not p.get("published_id") and 0 < (utc(p["scheduled_utc"]) - now).total_seconds() <= limit)
+        if upcoming:
+            pause = (upcoming[0] - now).total_seconds() + 5
+            print(f"Next post due at {upcoming[0]:%H:%M} UTC; waiting {pause / 60:.1f} min")
+            time.sleep(pause)
+            now = datetime.now(timezone.utc)
+
     before = json.dumps(manifest, sort_keys=True)
     due = select_due(manifest, now)
     if json.dumps(manifest, sort_keys=True) != before:

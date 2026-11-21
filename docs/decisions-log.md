@@ -23,3 +23,6 @@
   instagram_manage_insights, pages_read_engagement, pages_show_list, stored only as the repo secret IG_ACCESS_TOKEN.
   Self-test run 44958999959: PASS (resolved @805scorelab via the Page, container FINISHED, nothing posted). Live quota
   reads 100 posts per 24 h. Development-mode app publishes without App Review.
+- **First live post (18:43 ET):** carousel 2026-11-21-c1 published as media 18108512654346487. GitHub's */10 cron
+  window around 23:30 UTC never fired on this new repo, so the run was dispatched by hand 12 minutes late. Fix: the
+  hourly sweep (which does fire) now waits inside the run for any post due within 62 minutes (publish.py --wait).
