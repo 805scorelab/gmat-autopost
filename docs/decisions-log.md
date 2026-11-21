@@ -15,3 +15,6 @@
 - **Meta assets (checked 17:40 ET):** business portfolio "805 Score Lab | GMAT Prep" (id 1704754697833557) owns the
   Facebook Page 805scorelab (id 1472099155984275) and the Instagram account @805scorelab (id 17841462777814941).
   Approver and owner: Pietro Cappellaro. Page bio rewritten to include "Independent. Not affiliated with GMAC."
+- **Meta app (17:44 ET):** "805scorelab autopost", app id 2367026930725579, owned by the business portfolio, use case
+  "Manage messaging and content on Instagram" (API setup with Unified login; Meta no longer offers Instagram-login setup
+  to new apps). Development mode. Token type: system user access token, never expiring.
