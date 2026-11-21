@@ -9,3 +9,6 @@
   "Daily GMAT practice: Quant, Verbal, Data Insights. / Every post is a question with a worked answer. / Independent. Not affiliated with GMAC."
 - **GitHub:** a standalone account, 805scorelab, owns the public repo 805scorelab/gmat-autopost (owner's choice over an org).
 - **Cadence:** 2 carousels, 2 Reels, 1 Story a day; slots ET 07:30 story, 08:00 carousel, 12:30 reel, 18:00 carousel, 21:00 reel (hypotheses until Insights say otherwise).
+- **Brand (owner, 17:31 ET):** adapt to the owner's "805" logo; videos on black. Owner gave editorial freedom ("choose
+  the colours that grow fastest"). Result in docs/brand-system.md: forest/paper/mint feed grid, Montserrat + Inter,
+  answer-bubble signature, black Reels and Stories with mint accents.
