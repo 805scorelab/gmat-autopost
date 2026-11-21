@@ -1,0 +1,7 @@
+PASS overall 92
+line 1 (125): 'Double a number and its remainder can change. Can you get this one in 30 seconds?'
+  slop: 100
+  characters: 100
+  specificity: 80
+  burstiness: 78
+  structure: 100

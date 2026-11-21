@@ -3,6 +3,41 @@
   "ig_user_id_hint": "17841462777814941",
   "media_base": "https://raw.githubusercontent.com/805scorelab/gmat-autopost/main/media/",
   "selftest_image": "selftest.jpg",
-  "slots_et": {"story": "07:30", "carousel": ["08:00", "18:00"], "reel": ["12:30", "21:00"]},
-  "posts": []
+  "slots_et": {
+    "story": "07:30",
+    "carousel": [
+      "08:00",
+      "18:00"
+    ],
+    "reel": [
+      "12:30",
+      "21:00"
+    ]
+  },
+  "posts": [
+    {
+      "id": "2026-11-21-c1",
+      "type": "carousel",
+      "series": "Problem of the Day",
+      "ground": "forest",
+      "grid_position": 1,
+      "scheduled_utc": "2026-11-21T23:30:00Z",
+      "media": [
+        "2026-11-21-c1/2026-11-21-c1-01.jpg",
+        "2026-11-21-c1/2026-11-21-c1-02.jpg",
+        "2026-11-21-c1/2026-11-21-c1-03.jpg",
+        "2026-11-21-c1/2026-11-21-c1-04.jpg",
+        "2026-11-21-c1/2026-11-21-c1-05.jpg",
+        "2026-11-21-c1/2026-11-21-c1-06.jpg",
+        "2026-11-21-c1/2026-11-21-c1-07.jpg",
+        "2026-11-21-c1/2026-11-21-c1-08.jpg",
+        "2026-11-21-c1/2026-11-21-c1-09.jpg"
+      ],
+      "caption_file": "build/captions/2026-11-21-c1.clean.txt",
+      "ai_generated": false,
+      "published_id": null,
+      "attempts": 0,
+      "last_error": null
+    }
+  ]
 }

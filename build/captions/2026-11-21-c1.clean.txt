@@ -1,0 +1,13 @@
+Double a number and its remainder can change. Can you get this one in 30 seconds?
+
+When the positive integer n is divided by 6, the remainder is 4. What's the remainder when 2n is divided by 6? Pick A to E, then swipe.
+
+Slide 4 tries n = 4. Slide 5 proves the result for every n with 6k + 4. Slide 7 explains why 4 is the trap answer.
+
+This is classic GMAT quant practice on remainders: no calculator, 5 choices, about 2 minutes on the real test. The same rule helps on data sufficiency questions about remainders.
+
+Save it for your next number properties session.
+
+Original question by 805 Score Lab. Independent. Not affiliated with GMAC.
+
+#GMAT #GMATprep #GMATquant #MBA
