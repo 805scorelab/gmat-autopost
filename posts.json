@@ -38,6 +38,37 @@
       "published_id": null,
       "attempts": 0,
       "last_error": null
+    },
+    {
+      "id": "2026-11-22-s1",
+      "type": "story",
+      "series": "Story Quiz",
+      "scheduled_utc": "2026-11-22T12:30:00Z",
+      "media": [
+        "2026-11-22-s1/2026-11-22-s1.jpg"
+      ],
+      "answer": "D",
+      "ai_generated": false,
+      "published_id": null,
+      "attempts": 0,
+      "last_error": null
+    },
+    {
+      "id": "2026-11-22-r1",
+      "type": "reel",
+      "series": "Shortcut",
+      "ground": "paper",
+      "grid_position": 2,
+      "scheduled_utc": "2026-11-22T17:30:00Z",
+      "media_branch": "media/2026-11-22-r1",
+      "video": "2026-11-22-r1.mp4",
+      "cover": "2026-11-22-r1-cover.jpg",
+      "caption_file": "build/captions/2026-11-22-r1.clean.txt",
+      "ai_generated": true,
+      "audio": "voiced",
+      "published_id": null,
+      "attempts": 0,
+      "last_error": null
     }
   ]
 }

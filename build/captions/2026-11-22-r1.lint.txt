@@ -1,0 +1,7 @@
+PASS overall 96
+line 1 (125): "Up 20%, then down 20%. You don't end where you started."
+  slop: 100
+  characters: 100
+  specificity: 79
+  burstiness: 99
+  structure: 100

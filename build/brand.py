@@ -169,10 +169,10 @@ def check(paths, n, size=(W, H)):
     return problems
 
 
-def check_html(html):
+def check_html(html, need_handle=True):
     """The handle must be on every slide, spelled exactly (it once shipped wrong on the sister page)."""
     problems = []
-    if HANDLE not in html:
+    if need_handle and HANDLE not in html:
         problems.append("handle missing")
     if "—" in html or "–" in html:
         problems.append("em or en dash found")

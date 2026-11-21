@@ -1,0 +1,13 @@
+Up 20%, then down 20%. You don't end where you started.
+
+Start with $100. Up 20% takes it to $120. Down 20% of $120 is $24, so you land on $96: a 4% loss. The answer is B.
+
+The shortcut works for any equal up and down move: square the percent and divide by 100. 20 times 20 is 400, so you lose 4%. Try it on 10% and you lose 1%.
+
+Percent change is core GMAT quant practice, and the Quant section gives you no calculator. Save this for your next session.
+
+Original question by 805 Score Lab. Independent. Not affiliated with GMAC.
+Original audio by 805 Score Lab.
+Narration: AI-generated voice; script is our original work.
+
+#GMAT #GMATprep #GMATquant #MBA
