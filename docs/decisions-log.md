@@ -12,3 +12,6 @@
 - **Brand (owner, 17:31 ET):** adapt to the owner's "805" logo; videos on black. Owner gave editorial freedom ("choose
   the colours that grow fastest"). Result in docs/brand-system.md: forest/paper/mint feed grid, Montserrat + Inter,
   answer-bubble signature, black Reels and Stories with mint accents.
+- **Meta assets (checked 17:40 ET):** business portfolio "805 Score Lab | GMAT Prep" (id 1704754697833557) owns the
+  Facebook Page 805scorelab (id 1472099155984275) and the Instagram account @805scorelab (id 17841462777814941).
+  Approver and owner: Pietro Cappellaro. Page bio rewritten to include "Independent. Not affiliated with GMAC."

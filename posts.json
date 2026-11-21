@@ -1,5 +1,6 @@
 {
   "account": "805scorelab",
+  "ig_user_id_hint": "17841462777814941",
   "media_base": "https://raw.githubusercontent.com/805scorelab/gmat-autopost/main/media/",
   "selftest_image": "selftest.jpg",
   "slots_et": {"story": "07:30", "carousel": ["08:00", "18:00"], "reel": ["12:30", "21:00"]},
