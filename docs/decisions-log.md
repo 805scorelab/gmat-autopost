@@ -18,3 +18,8 @@
 - **Meta app (17:44 ET):** "805scorelab autopost", app id 2367026930725579, owned by the business portfolio, use case
   "Manage messaging and content on Instagram" (API setup with Unified login; Meta no longer offers Instagram-login setup
   to new apps). Development mode. Token type: system user access token, never expiring.
+- **Token and self-test (17:53 ET):** system user 805scorelab-publisher (Admin) has full control of the Page, the app
+  and @805scorelab. Never-expiring token with instagram_basic, instagram_content_publish, instagram_manage_comments,
+  instagram_manage_insights, pages_read_engagement, pages_show_list, stored only as the repo secret IG_ACCESS_TOKEN.
+  Self-test run 44958999959: PASS (resolved @805scorelab via the Page, container FINISHED, nothing posted). Live quota
+  reads 100 posts per 24 h. Development-mode app publishes without App Review.
