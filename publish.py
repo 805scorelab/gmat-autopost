@@ -313,6 +313,12 @@ def selftest(ig_user_id, manifest):
                            method="POST")["id"]
     wait_until_ready(container)
     print(f"  container {container} reached FINISHED")
+    story = next((p for p in manifest["posts"] if p["type"] == "story" and not p.get("published_id")), None)
+    if story:                                   # the Story path too: a STORIES container, never published
+        sc = call_graph(f"{ig_user_id}/media", {"media_type": "STORIES",
+                                                 "image_url": media_url(manifest, story["media"][0])}, method="POST")["id"]
+        wait_until_ready(sc)
+        print(f"  story container {sc} for {story['id']} reached FINISHED")
     print("PASS - credentials, media hosting and the publishing API all work. Nothing was posted.")
     return 0
 
