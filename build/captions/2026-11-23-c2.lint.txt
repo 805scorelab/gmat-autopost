@@ -1,0 +1,7 @@
+PASS overall 88
+line 1 (125): 'Larkfield Bread posted calorie counts and pastry sales fell by a third. Did the labels do it?'
+  slop: 100
+  characters: 100
+  specificity: 64
+  burstiness: 75
+  structure: 100

@@ -1,0 +1,13 @@
+x squared is 9. Is x positive? The trap answer is D.
+
+Statement 1 allows x = 3 and x = minus 3, so you get a yes and a no. Not sufficient. Statement 2, x cubed is 27, allows only 3, because a cube keeps the sign. The answer is B.
+
+Data sufficiency sits in the Data Insights section of the GMAT. When a statement squares a variable, test the negative before you call it sufficient.
+
+Save this for your next data sufficiency drill.
+
+Original question by 805 Score Lab. Independent. Not affiliated with GMAC.
+Original audio by 805 Score Lab.
+Narration: AI-generated voice; script is our original work.
+
+#GMAT #GMATprep #DataInsights #DataSufficiency #MBA

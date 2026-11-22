@@ -1,0 +1,13 @@
+Boys to girls is 3 to 5. Then 6 boys join and it's 3 to 4. How many girls are in the class?
+
+This is an original GMAT quant ratio problem from 805 Score Lab. Pick A to E on slide 3 before you swipe.
+
+The move: call one part k. Boys are 3k, girls are 5k, and the girls never change. Slide 5 turns the new ratio into 1 equation and finds k = 8.
+
+Slide 8 shows the trap answer, and it catches people who solve everything right and then answer the wrong question.
+
+Ratio questions show up all over GMAT Quant, with no calculator. Save this for your next ratio drill.
+
+Original question by 805 Score Lab. Independent. Not affiliated with GMAC.
+
+#GMAT #GMATprep #GMATquant #MBA

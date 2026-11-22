@@ -1,0 +1,7 @@
+PASS overall 94
+line 1 (125): "Boys to girls is 3 to 5. Then 6 boys join and it's 3 to 4. How many girls are in the class?"
+  slop: 100
+  characters: 100
+  specificity: 90
+  burstiness: 81
+  structure: 100

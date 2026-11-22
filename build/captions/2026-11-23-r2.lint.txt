@@ -1,0 +1,7 @@
+PASS overall 91
+line 1 (125): 'x squared is 9. Is x positive? The trap answer is D.'
+  slop: 100
+  characters: 100
+  specificity: 56
+  burstiness: 100
+  structure: 100

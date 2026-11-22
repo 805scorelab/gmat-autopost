@@ -1,0 +1,13 @@
+60 mph out, 40 mph back. Your average speed isn't 50.
+
+Drive 120 miles at 60 and you're on the road for 2 hours. Drive back at 40 and it takes 3 hours. That's 240 miles in 5 hours: 48 mph. The answer is B.
+
+You spend more time at the slower speed, so the average leans toward 40. For equal distances, the shortcut is 2 times 60 times 40, divided by 100: 48.
+
+Average speed and rate problems are classic GMAT quant practice. Save this for your next rate question.
+
+Original question by 805 Score Lab. Independent. Not affiliated with GMAC.
+Original audio by 805 Score Lab.
+Narration: AI-generated voice; script is our original work.
+
+#GMAT #GMATprep #GMATquant #MBA

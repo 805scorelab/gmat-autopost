@@ -1,0 +1,7 @@
+PASS overall 93
+line 1 (125): "60 mph out, 40 mph back. Your average speed isn't 50."
+  slop: 100
+  characters: 100
+  specificity: 84
+  burstiness: 79
+  structure: 100
