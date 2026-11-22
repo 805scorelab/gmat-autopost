@@ -1,12 +1,60 @@
 {
- "updated_utc": "2026-11-21T23:43:34+00:00",
+ "updated_utc": "2026-11-22T23:01:05+00:00",
  "media": [
+  {
+   "id": "18197106184394943",
+   "kind": "carousel_album",
+   "permalink": "https://www.instagram.com/p/DgD77oLE3Os/",
+   "posted_et": "2026-11-22 Sun 18:00",
+   "hours_live": 0.0,
+   "caption": "Darnell doubled its cyclists on Main Street with bike lanes. Will lanes double cycling on ",
+   "reach": 0,
+   "views": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 0,
+   "likes": 0,
+   "comments": 0,
+   "follows": 0
+  },
+  {
+   "id": "18035764121752515",
+   "kind": "reel",
+   "permalink": "https://www.instagram.com/reel/DgDWGr5lPs0/",
+   "posted_et": "2026-11-22 Sun 12:30",
+   "hours_live": 5.5,
+   "caption": "Up 20%, then down 20%. You don't end where you started.",
+   "reach": 48,
+   "views": 53,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 0,
+   "likes": 0,
+   "comments": 0,
+   "ig_reels_avg_watch_time": 4668
+  },
+  {
+   "id": "17937350919420444",
+   "kind": "carousel_album",
+   "permalink": "https://www.instagram.com/p/DgC3RSblDQ2/",
+   "posted_et": "2026-11-22 Sun 08:00",
+   "hours_live": 10.0,
+   "caption": "x and y are integers. Is x bigger than y? Two clues, and only one answer survives the tie ",
+   "reach": 0,
+   "views": 0,
+   "saved": 0,
+   "shares": 0,
+   "total_interactions": 0,
+   "likes": 0,
+   "comments": 0,
+   "follows": 0
+  },
   {
    "id": "18108512654346487",
    "kind": "carousel_album",
    "permalink": "https://www.instagram.com/p/DgBb_yhD_Xm/",
    "posted_et": "2026-11-21 Sat 18:43",
-   "hours_live": 0.0,
+   "hours_live": 23.3,
    "caption": "Double a number and its remainder can change. Can you get this one in 30 seconds?",
    "reach": 0,
    "views": 0,
@@ -18,5 +66,7 @@
    "follows": 0
   }
  ],
- "unavailable": []
+ "unavailable": [
+  "reel follows"
+ ]
 }
