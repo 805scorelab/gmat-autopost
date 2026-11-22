@@ -4,3 +4,4 @@ build/out/
 __pycache__/
 .env
 *.token
+build/music/sfrender
