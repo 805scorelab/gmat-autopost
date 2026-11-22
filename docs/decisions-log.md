@@ -47,3 +47,6 @@
   change them now). Next score must use real sampled instruments (an open SoundFont rendered offline), sparse and
   calm, no busy arpeggio, sitting clearly under the voice; until a new score passes the owner's ear, prefer less music.
 - **Video quality must keep improving.** The owner will share samples from his other channels as references.
+- **No approval needed (owner, 23:11 ET):** "Do not need my approval. Just go on and post then." The new music (score
+  v1, sampled instruments) and every future post go out without waiting for him. Daily run: docs/daily/daily-run.md,
+  run by a scheduled task every afternoon for the next day.
