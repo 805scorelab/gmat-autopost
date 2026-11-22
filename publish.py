@@ -203,6 +203,22 @@ def publish_story(ig_user_id, post, manifest):
     return publish_container(ig_user_id, container)
 
 
+def already_on_instagram(ig_user_id, post, manifest):
+    """Last guard against a double publish (21 Nov: a queued run started from a stale checkout and posted the same
+    carousel twice). Before publishing, look at the account's recent media: a feed post or Reel whose caption starts
+    the same way, posted in the last 48 hours, means this entry is already live. Stories carry no caption and expire,
+    so they are matched by the time window only through the manifest."""
+    if post["type"] == "story":
+        return None
+    head = caption_of(post).strip()[:90]
+    res = call_graph(f"{ig_user_id}/media", {"fields": "id,caption,timestamp", "limit": "25"})
+    for m in res.get("data", []):
+        age_h = (datetime.now(timezone.utc) - utc(m["timestamp"].replace("+0000", "+00:00"))).total_seconds() / 3600
+        if age_h <= 48 and (m.get("caption") or "").strip()[:90] == head:
+            return m["id"]
+    return None
+
+
 PUBLISHERS = {"carousel": publish_carousel, "reel": publish_reel, "story": publish_story}
 
 
@@ -373,8 +389,45 @@ def insights_if_stale(ig_user_id, max_age_hours=20):
         print("  performance recorded")
 
 
+RECORD_KEYS = ("published_id", "published_at_utc", "attempts", "last_error", "note", "moved_log", "scheduled_utc")
+
+
+def export_records(path):
+    """Write this run's publish records (by post id) so they can be re-applied onto a newer main."""
+    m = load_manifest()
+    records = {p["id"]: {k: p[k] for k in RECORD_KEYS if k in p} for p in m["posts"]}
+    with open(path, "w") as handle:
+        json.dump(dict(records=records, api_block=m.get("api_block")), handle)
+
+
+def apply_records(path):
+    """Merge exported records into the current posts.json. A published_id is never removed or replaced."""
+    data = json.load(open(path))
+    m = load_manifest()
+    for p in m["posts"]:
+        rec = data["records"].get(p["id"])
+        if not rec:
+            continue
+        if p.get("published_id") and rec.get("published_id") and p["published_id"] != rec["published_id"]:
+            p.setdefault("duplicate_published_ids", []).append(rec["published_id"])
+            continue
+        for k, v in rec.items():
+            if k == "published_id" and p.get("published_id"):
+                continue
+            p[k] = v
+    if data.get("api_block"):
+        m["api_block"] = data["api_block"]
+    save_manifest(m)
+
+
 def main():
     now = datetime.now(timezone.utc)
+    if "--export-records" in sys.argv:
+        export_records(sys.argv[sys.argv.index("--export-records") + 1])
+        return 0
+    if "--apply-records" in sys.argv:
+        apply_records(sys.argv[sys.argv.index("--apply-records") + 1])
+        return 0
     manifest = load_manifest()
 
     if "{{" in manifest["media_base"] or "OWNER" in manifest["media_base"]:
@@ -447,6 +500,14 @@ def main():
     for post in due:
         print(f"Publishing {post['id']} ({post['type']}, scheduled {post['scheduled_utc']})")
         try:
+            live = already_on_instagram(ig_user_id, post, manifest)
+            if live:
+                post["published_id"] = live
+                post["published_at_utc"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
+                post["note"] = "found already live on Instagram; not published again"
+                save_manifest(manifest)
+                print(f"  already live as {live}; recorded, NOT published again")
+                continue
             post["published_id"] = PUBLISHERS[post["type"]](ig_user_id, post, manifest)
             post["published_at_utc"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
             post["last_error"] = None

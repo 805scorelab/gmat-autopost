@@ -26,3 +26,10 @@
 - **First live post (18:43 ET):** carousel 2026-11-21-c1 published as media 18108512654346487. GitHub's */10 cron
   window around 23:30 UTC never fired on this new repo, so the run was dispatched by hand 12 minutes late. Fix: the
   hourly sweep (which does fire) now waits inside the run for any post due within 62 minutes (publish.py --wait).
+- **Duplicate carousel (owner, 19:14 ET):** 2026-11-21-c1 went out twice (18108512654346487 by the hand-dispatched
+  run, 17891836164474720 by a scheduled run queued behind it). Cause: the queued run was checked out at the commit that
+  triggered it, before the first run recorded the published_id; its own record then hit a rebase conflict and was
+  lost while the run still showed green. Owner: "make sure to not post duplicates". Three guards added: (1) every run
+  pulls the tip of main before publishing; (2) publish.py checks the account's recent media and refuses to publish a
+  post whose caption is already live in the last 48 h; (3) recording never fails silently: on a conflict it re-applies
+  the run's records onto the newest main, and fails the run loudly if it still cannot record. Owner deletes one copy.

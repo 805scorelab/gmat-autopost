@@ -51,6 +51,13 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Use the newest manifest
+        # A run that waited in the concurrency queue was checked out at the commit that triggered it, which can be
+        # older than the run that just published (21 Nov duplicate). Always publish from the tip of main.
+        run: git pull --ff-only origin main && git log -1 --format='manifest at %h %s'
 
       - uses: actions/setup-python@v5
         with:
@@ -79,15 +86,26 @@ jobs:
       - name: Record what was published
         if: always() && (github.event_name != 'workflow_dispatch' || inputs.mode == 'publish' || inputs.mode == 'insights')
         run: |
-          files="posts.json docs/daily/performance.json docs/daily/performance.md"
-          git add -N $files 2>/dev/null || true
+          files=$(ls posts.json docs/daily/performance.json docs/daily/performance.md 2>/dev/null)
           if [ -n "$(git status --porcelain -- $files)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add -- $files
             git commit -m "Record published posts [skip ci]"
             # the daily content run pushes to main too: rebase on it rather than fail
-            for i in 1 2 3; do git pull --rebase -q && git push && break; sleep 5; done
+            python publish.py --export-records /tmp/records.json
+            ok=0
+            for i in 1 2 3; do
+              if git pull --rebase -q; then git push && ok=1 && break; fi
+              # conflict: start again from the newest main and re-apply this run's records (ids are never dropped)
+              git rebase --abort 2>/dev/null || true
+              git fetch -q origin main && git reset -q --hard origin/main
+              python publish.py --apply-records /tmp/records.json
+              git add -- $files && git commit -qm "Record published posts [skip ci]" || true
+              git push && ok=1 && break
+              sleep 5
+            done
+            if [ "$ok" != 1 ]; then echo "::error::published ids could NOT be recorded on main"; exit 1; fi
           else
             echo "No manifest changes."
           fi

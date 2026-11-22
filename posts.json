@@ -38,7 +38,11 @@
       "published_id": "18108512654346487",
       "attempts": 0,
       "last_error": null,
-      "published_at_utc": "2026-11-21T23:43:31+00:00"
+      "published_at_utc": "2026-11-21T23:43:31+00:00",
+      "duplicate_published_ids": [
+        "17891836164474720"
+      ],
+      "note": "published twice on 21 Nov (stale checkout in a queued run); owner deletes one copy by hand"
     },
     {
       "id": "2026-11-22-s1",
