@@ -38,3 +38,12 @@
   CR weaken (bike lanes), 21:00 Reel silent (average trap). A/B: r1 voiced vs r2 silent. Grid: forest, paper, mint,
   forest, paper. Reel and Story paths proven by self-tests (containers FINISHED, nothing posted). The hourly run now
   publishes up to 3 due posts in one run, each at its minute.
+
+## 21 Nov 2026, 19:44 ET (owner)
+- **Voiceover on every Reel from now on.** The silent variant (option b) ends after the already-queued 22 Nov 21:00
+  Reel; that one stays as it is. The A/B test is closed: voiced is the standard.
+- **Music: "very bad", "very annoying".** The synthesised bed in build/score.py (FM e-piano arpeggio, detuned pad, pulse)
+  is retired for every new Reel. Do not reuse it. The two Reels already queued for 22 Nov keep their music (owner: do not
+  change them now). Next score must use real sampled instruments (an open SoundFont rendered offline), sparse and
+  calm, no busy arpeggio, sitting clearly under the voice; until a new score passes the owner's ear, prefer less music.
+- **Video quality must keep improving.** The owner will share samples from his other channels as references.
