@@ -1,0 +1,7 @@
+PASS overall 89
+line 1 (125): 'Darnell doubled its cyclists on Main Street with bike lanes. Will lanes double cycling on every street?'
+  slop: 100
+  characters: 100
+  specificity: 64
+  burstiness: 80
+  structure: 100

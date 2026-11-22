@@ -33,3 +33,8 @@
   pulls the tip of main before publishing; (2) publish.py checks the account's recent media and refuses to publish a
   post whose caption is already live in the last 48 h; (3) recording never fails silently: on a conflict it re-applies
   the run's records onto the newest main, and fails the run loudly if it still cannot record. Owner deletes one copy.
+- **Sunday 22 Nov queued (owner: "make sure for tomorrow the reels are scheduled and everything"):** full cadence.
+  07:30 Story (3x + 5 = 20), 08:00 carousel DS drill (is x > y), 12:30 Reel voiced (up 20%, down 20%), 18:00 carousel
+  CR weaken (bike lanes), 21:00 Reel silent (average trap). A/B: r1 voiced vs r2 silent. Grid: forest, paper, mint,
+  forest, paper. Reel and Story paths proven by self-tests (containers FINISHED, nothing posted). The hourly run now
+  publishes up to 3 due posts in one run, each at its minute.

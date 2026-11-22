@@ -1,0 +1,12 @@
+4 numbers average 10. Add 1 more and the average jumps to 12. What did you add?
+
+The trap answer is 12. The fix is to stop working with averages and switch to totals. 4 numbers averaging 10 sum to 40. 5 numbers averaging 12 sum to 60. The new number is 60 minus 40, which is 20. The answer is C.
+
+Faster still: the new number pays for its own 12, plus 2 extra for each of the other 4. That's 12 + 8 = 20.
+
+Averages are core GMAT quant, and totals make them easy. Save this one.
+
+Original question by 805 Score Lab. Independent. Not affiliated with GMAC.
+Original audio by 805 Score Lab.
+
+#GMAT #GMATprep #GMATquant #MBA

@@ -1,0 +1,7 @@
+PASS overall 95
+line 1 (125): '4 numbers average 10. Add 1 more and the average jumps to 12. What did you add?'
+  slop: 100
+  characters: 100
+  specificity: 82
+  burstiness: 95
+  structure: 100

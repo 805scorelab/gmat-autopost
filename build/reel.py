@@ -57,7 +57,7 @@ def reel_css():
     .zone p{font-size:52px}
     .zone .bubble{width:118px;height:118px;font-size:56px;border-width:7px}
     .zone .bubbles{gap:26px}
-    .cap{position:absolute;left:72px;right:140px;top:1440px;font:600 44px/1.3 Inter;color:#fff;opacity:.92}
+    .cap{position:absolute;left:72px;right:140px;top:1320px;font:600 44px/1.3 Inter;color:#fff;opacity:.92}
     .big{font:800 118px/1.04 Montserrat;letter-spacing:-.025em}
     .mid{font:700 76px/1.2 Montserrat}
     .mint{color:#BFFBD1}
@@ -209,11 +209,11 @@ def build(reel_id, beats, cover_html, voiced=True, seed=1, out_root=None, music_
     # encode and master loudness (-16 LUFS, true peak -1.5 dBTP)
     mp4 = out / f"{reel_id}.mp4"
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-framerate", str(FPS), "-i", str(frames_dir / "%06d.jpg"),
-                    "-i", str(out / "mix.wav"), "-af", "loudnorm=I=-16:TP=-1.5:LRA=9", "-ar", "48000",
+                    "-i", str(out / "mix.wav"), "-af", "loudnorm=I=-16:TP=-2.0:LRA=9", "-ar", "48000",
                     "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-pix_fmt", "yuv420p",
                     "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", str(mp4)], check=True)
     lufs, tp = loudness(mp4)
-    if not (-17.5 <= lufs <= -14.5 and tp <= -1.0):
+    if not (-17.5 <= lufs <= -14.5 and tp <= -1.5):
         raise RuntimeError(f"loudness gate: {lufs} LUFS, true peak {tp}")
 
     # motion gate: longest static run

@@ -81,7 +81,12 @@ jobs:
       - name: Publish anything due
         if: github.event_name != 'workflow_dispatch' || inputs.mode == 'publish'
         run: |
-          if [ "${{ github.event_name }}" = "schedule" ]; then python publish.py --wait 62; else python publish.py; fi
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            # up to 3 rounds: e.g. the 07:30 Story and the 08:00 carousel both go out on time from one hourly run
+            for round in 1 2 3; do python publish.py --wait 62 || exit 1; done
+          else
+            python publish.py
+          fi
 
       - name: Record what was published
         if: always() && (github.event_name != 'workflow_dispatch' || inputs.mode == 'publish' || inputs.mode == 'insights')

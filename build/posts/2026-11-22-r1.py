@@ -90,7 +90,7 @@ beats = [
          f'<div style="margin-top:80px">{bubbles("B")}</div>', sfx=[("pop", 0.1)], pad_after=0.6),
 ]
 
-COVER = f"""<style>{base_css('paper', height=1920)}
+COVER = f"""<style>{base_css('mint', height=1920)}
  .c{{position:absolute;top:420px;left:90px;right:90px}}</style><div class=frame><div class=c>
  <span class=chip>Shortcut</span><h1 style="margin-top:40px;font-size:124px">Up 20%.<br>Down 20%.<br>Where are you?</h1>
  <div style="margin-top:70px">{bubbles()}</div></div></div>"""

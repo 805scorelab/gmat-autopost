@@ -1,0 +1,13 @@
+x and y are integers. Is x bigger than y? Two clues, and only one answer survives the tie test.
+
+Statement 1 says x minus y is greater than minus 1. Statement 2 says x isn't equal to y. Decide what's enough before you swipe: A, B, C, D or E.
+
+Slide 4 breaks statement 1 with x = 3 and y = 3. Slide 5 breaks statement 2. Slide 6 shows why the 2 clues together settle it.
+
+Data sufficiency now sits in the Data Insights section of the GMAT. The skill is the same as always: find one case that says yes and one that says no.
+
+Comment your answer letter before you check slide 7.
+
+Original question by 805 Score Lab. Independent. Not affiliated with GMAC.
+
+#GMAT #GMATprep #DataInsights #DataSufficiency #MBA

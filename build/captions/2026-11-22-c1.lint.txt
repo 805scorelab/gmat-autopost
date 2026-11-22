@@ -1,0 +1,7 @@
+PASS overall 91
+line 1 (125): 'x and y are integers. Is x bigger than y? Two clues, and only one answer survives the tie test.'
+  slop: 100
+  characters: 100
+  specificity: 75
+  burstiness: 78
+  structure: 100
