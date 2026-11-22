@@ -98,10 +98,11 @@
       "caption_file": "build/captions/2026-11-22-r1.clean.txt",
       "ai_generated": true,
       "audio": "voiced",
-      "published_id": null,
+      "published_id": "18035764121752515",
       "attempts": 0,
       "last_error": null,
-      "ab_test": "voiced vs silent"
+      "ab_test": "voiced vs silent",
+      "published_at_utc": "2026-11-22T17:30:52+00:00"
     },
     {
       "id": "2026-11-22-c2",
