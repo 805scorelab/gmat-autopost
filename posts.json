@@ -184,9 +184,11 @@
       "ground": "mint",
       "grid_position": 6,
       "ai_generated": false,
-      "published_id": null,
+      "published_id": "17877026448598302",
       "attempts": 1,
-      "last_error": "Graph API 403 on 17841462777814941/media_publish: {\"error\":{\"message\":\"Application request limit reached\",\"code\":4,\"type\":\"OAuthException\",\"error_subcode\":2207051,\"is_transient\":false,\"error_user_msg\":\"Limitiamo determinate attività per proteggere la nostra community. Comunicaci se ritieni che abbia"
+      "last_error": "Graph API 403 on 17841462777814941/media_publish: {\"error\":{\"message\":\"Application request limit reached\",\"code\":4,\"type\":\"OAuthException\",\"error_subcode\":2207051,\"is_transient\":false,\"error_user_msg\":\"Limitiamo determinate attività per proteggere la nostra community. Comunicaci se ritieni che abbia",
+      "published_at_utc": "2026-11-23T13:01:06+00:00",
+      "note": "found already live on Instagram; not published again"
     },
     {
       "id": "2026-11-23-r1",
