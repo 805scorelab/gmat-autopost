@@ -1,0 +1,13 @@
+Every intern who finishes the training gets an offer. Sam got none. What must be true?
+
+Write the rule as 1 arrow: finished training leads to an offer. If Sam had finished, Sam would have an offer. Sam has none, so Sam did not finish. The answer is A.
+
+The trap answer is C. It flips the arrow and claims every intern with an offer finished the training. The rule never says that.
+
+Must be true questions are part of GMAT Critical Reasoning. The Verbal section gives you 45 minutes for 23 questions, so spotting a flipped arrow in 10 seconds pays off. Save this for your next Critical Reasoning set.
+
+Original question by 805 Score Lab. Independent. Not affiliated with GMAC.
+Original audio by 805 Score Lab.
+Narration: AI-generated voice; script is our original work.
+
+#GMAT #GMATprep #GMATverbal #CriticalReasoning #MBA

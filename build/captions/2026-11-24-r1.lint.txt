@@ -1,0 +1,7 @@
+PASS overall 96
+line 1 (125): '28% of 75 without a calculator? Swap the numbers and it takes 5 seconds.'
+  slop: 100
+  characters: 100
+  specificity: 84
+  burstiness: 96
+  structure: 100

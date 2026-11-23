@@ -16,3 +16,5 @@
 | 2026-11-24 | 2026-11-24-s1 | Quant | story | fraction sum 1/2 + 1/3 + 1/6, trap adding tops and bottoms | C |
 | 2026-11-24 | 2026-11-24-c1 | Quant | PS carousel | work rates, A 6 h, A+B 4 h, find B alone | D |
 | 2026-11-24 | 2026-11-24-c2 | Strategy | pacing carousel | Quant pacing, 20 min after 7 questions, checkpoints 7/14/21 | D |
+| 2026-11-24 | 2026-11-24-r1 | Quant | reel | percent swap shortcut, 28% of 75 = 75% of 28 = 21 | B |
+| 2026-11-24 | 2026-11-24-r2 | Verbal | CR must be true reel | rule finish training -> offer, no offer -> not finished; trap reverses the arrow | A |

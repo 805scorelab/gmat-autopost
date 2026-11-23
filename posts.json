@@ -289,6 +289,23 @@
       "last_error": null
     },
     {
+      "id": "2026-11-24-r1",
+      "type": "reel",
+      "series": "Shortcut",
+      "scheduled_utc": "2026-11-24T17:30:00Z",
+      "media_branch": "media/2026-11-24-r1",
+      "video": "2026-11-24-r1.mp4",
+      "cover": "2026-11-24-r1-cover.jpg",
+      "audio": "voiced",
+      "caption_file": "build/captions/2026-11-24-r1.clean.txt",
+      "ground": "paper",
+      "grid_position": 11,
+      "ai_generated": true,
+      "published_id": null,
+      "attempts": 0,
+      "last_error": null
+    },
+    {
       "id": "2026-11-24-c2",
       "type": "carousel",
       "series": "GMAT Strategy",
@@ -309,6 +326,23 @@
       "ground": "mint",
       "grid_position": 12,
       "ai_generated": false,
+      "published_id": null,
+      "attempts": 0,
+      "last_error": null
+    },
+    {
+      "id": "2026-11-24-r2",
+      "type": "reel",
+      "series": "Trap Answer",
+      "scheduled_utc": "2026-11-25T02:00:00Z",
+      "media_branch": "media/2026-11-24-r2",
+      "video": "2026-11-24-r2.mp4",
+      "cover": "2026-11-24-r2-cover.jpg",
+      "audio": "voiced",
+      "caption_file": "build/captions/2026-11-24-r2.clean.txt",
+      "ground": "forest",
+      "grid_position": 13,
+      "ai_generated": true,
       "published_id": null,
       "attempts": 0,
       "last_error": null

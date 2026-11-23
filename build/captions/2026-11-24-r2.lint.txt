@@ -1,0 +1,7 @@
+PASS overall 91
+line 1 (125): 'Every intern who finishes the training gets an offer. Sam got none. What must be true?'
+  slop: 100
+  characters: 100
+  specificity: 62
+  burstiness: 93
+  structure: 100
