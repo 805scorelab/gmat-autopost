@@ -247,6 +247,20 @@
       "published_id": null,
       "attempts": 0,
       "last_error": null
+    },
+    {
+      "id": "2026-11-24-s1",
+      "type": "story",
+      "series": "Story Quiz",
+      "scheduled_utc": "2026-11-24T12:30:00Z",
+      "answer": "C",
+      "media": [
+        "2026-11-24-s1/2026-11-24-s1.jpg"
+      ],
+      "ai_generated": false,
+      "published_id": null,
+      "attempts": 0,
+      "last_error": null
     }
   ]
 }
