@@ -229,8 +229,8 @@
       "grid_position": 8,
       "ai_generated": false,
       "published_id": null,
-      "attempts": 0,
-      "last_error": null
+      "attempts": 1,
+      "last_error": "Graph API 403 on 17841462777814941/media_publish: {\"error\":{\"message\":\"Application request limit reached\",\"code\":4,\"type\":\"OAuthException\",\"error_subcode\":2207051,\"is_transient\":false,\"error_user_msg\":\"Limitiamo determinate attività per proteggere la nostra community. Comunicaci se ritieni che abbia"
     },
     {
       "id": "2026-11-23-r2",
