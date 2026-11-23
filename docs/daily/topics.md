@@ -14,3 +14,5 @@
 | 2026-11-23 | 2026-11-23-c2 | Verbal | CR assumption | calorie labels and pastry sales, no other cause | B |
 | 2026-11-23 | 2026-11-23-r2 | DI | DS reel | is x positive, x^2 = 9 vs x^3 = 27 | B |
 | 2026-11-24 | 2026-11-24-s1 | Quant | story | fraction sum 1/2 + 1/3 + 1/6, trap adding tops and bottoms | C |
+| 2026-11-24 | 2026-11-24-c1 | Quant | PS carousel | work rates, A 6 h, A+B 4 h, find B alone | D |
+| 2026-11-24 | 2026-11-24-c2 | Strategy | pacing carousel | Quant pacing, 20 min after 7 questions, checkpoints 7/14/21 | D |

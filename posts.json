@@ -262,6 +262,56 @@
       "published_id": null,
       "attempts": 0,
       "last_error": null
+    },
+    {
+      "id": "2026-11-24-c1",
+      "type": "carousel",
+      "series": "Problem of the Day",
+      "scheduled_utc": "2026-11-24T13:00:00Z",
+      "media": [
+        "2026-11-24-c1/2026-11-24-c1-01.jpg",
+        "2026-11-24-c1/2026-11-24-c1-02.jpg",
+        "2026-11-24-c1/2026-11-24-c1-03.jpg",
+        "2026-11-24-c1/2026-11-24-c1-04.jpg",
+        "2026-11-24-c1/2026-11-24-c1-05.jpg",
+        "2026-11-24-c1/2026-11-24-c1-06.jpg",
+        "2026-11-24-c1/2026-11-24-c1-07.jpg",
+        "2026-11-24-c1/2026-11-24-c1-08.jpg",
+        "2026-11-24-c1/2026-11-24-c1-09.jpg",
+        "2026-11-24-c1/2026-11-24-c1-10.jpg"
+      ],
+      "caption_file": "build/captions/2026-11-24-c1.clean.txt",
+      "ground": "forest",
+      "grid_position": 10,
+      "ai_generated": false,
+      "published_id": null,
+      "attempts": 0,
+      "last_error": null
+    },
+    {
+      "id": "2026-11-24-c2",
+      "type": "carousel",
+      "series": "GMAT Strategy",
+      "scheduled_utc": "2026-11-24T23:00:00Z",
+      "media": [
+        "2026-11-24-c2/2026-11-24-c2-01.jpg",
+        "2026-11-24-c2/2026-11-24-c2-02.jpg",
+        "2026-11-24-c2/2026-11-24-c2-03.jpg",
+        "2026-11-24-c2/2026-11-24-c2-04.jpg",
+        "2026-11-24-c2/2026-11-24-c2-05.jpg",
+        "2026-11-24-c2/2026-11-24-c2-06.jpg",
+        "2026-11-24-c2/2026-11-24-c2-07.jpg",
+        "2026-11-24-c2/2026-11-24-c2-08.jpg",
+        "2026-11-24-c2/2026-11-24-c2-09.jpg",
+        "2026-11-24-c2/2026-11-24-c2-10.jpg"
+      ],
+      "caption_file": "build/captions/2026-11-24-c2.clean.txt",
+      "ground": "mint",
+      "grid_position": 12,
+      "ai_generated": false,
+      "published_id": null,
+      "attempts": 0,
+      "last_error": null
     }
   ]
 }

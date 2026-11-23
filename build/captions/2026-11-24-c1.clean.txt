@@ -1,0 +1,13 @@
+Machine A takes 6 hours. A and B together take 4. How long does B take alone?
+
+This is an original GMAT quant work rate problem from 805 Score Lab. Pick A to E on slide 3 before you swipe.
+
+The move: hours can't be subtracted, but rates can. Slide 5 turns 1/4 minus 1/6 into 1/12 of a batch per hour.
+
+Slide 8 shows the trap answer, 6 minus 4. It looks fast and makes machine B 3 times quicker than A.
+
+Work rate questions appear in GMAT Quant with no calculator. Save this for your next rates drill.
+
+Original question by 805 Score Lab. Independent. Not affiliated with GMAC.
+
+#GMAT #GMATprep #GMATquant #MBA

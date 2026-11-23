@@ -1,0 +1,7 @@
+PASS overall 92
+line 1 (125): 'Machine A takes 6 hours. A and B together take 4. How long does B take alone?'
+  slop: 100
+  characters: 100
+  specificity: 90
+  burstiness: 69
+  structure: 100

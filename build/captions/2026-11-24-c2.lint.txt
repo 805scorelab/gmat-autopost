@@ -1,0 +1,7 @@
+PASS overall 91
+line 1 (125): '20 minutes into GMAT Quant and you just finished question 7. Are you behind?'
+  slop: 100
+  characters: 100
+  specificity: 56
+  burstiness: 97
+  structure: 100
