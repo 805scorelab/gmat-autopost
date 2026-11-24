@@ -1,0 +1,7 @@
+PASS overall 92
+line 1 (125): '40 liters at 25% acid. How much water turns it into 20% acid?'
+  slop: 100
+  characters: 100
+  specificity: 86
+  burstiness: 76
+  structure: 100

@@ -19,3 +19,5 @@
 | 2026-11-24 | 2026-11-24-r1 | Quant | reel | percent swap shortcut, 28% of 75 = 75% of 28 = 21 | B |
 | 2026-11-24 | 2026-11-24-r2 | Verbal | CR must be true reel | rule finish training -> offer, no offer -> not finished; trap reverses the arrow | A |
 | 2026-11-25 | 2026-11-25-s1 | Quant | story | which one is prime: 51 91 57 97 87, trap 91 = 7 x 13 | D |
+| 2026-11-25 | 2026-11-25-c1 | Quant | PS carousel | mixture dilution, 40 L at 25% acid, add water to reach 20%, trap new total 50 | C |
+| 2026-11-25 | 2026-11-25-c2 | Verbal | CR paradox | library open later on weekdays, print borrowing fell; e-book app; trap study rooms | E |

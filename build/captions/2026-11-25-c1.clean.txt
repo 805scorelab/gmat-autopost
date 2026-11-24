@@ -1,0 +1,13 @@
+40 liters at 25% acid. How much water turns it into 20% acid?
+
+This is an original GMAT quant mixture problem from 805 Score Lab. Pick A to E on slide 3 before you swipe.
+
+The move: the acid never changes. Slide 4 locks it at 10 liters, and slide 5 finds the new total of 50.
+
+Slide 8 shows the trap answer, 50. It is the right middle step and the wrong final answer.
+
+Mixture and dilution questions appear in GMAT Quant with no calculator. Save this for your next percents drill.
+
+Original question by 805 Score Lab. Independent. Not affiliated with GMAC.
+
+#GMAT #GMATprep #GMATquant #MBA
