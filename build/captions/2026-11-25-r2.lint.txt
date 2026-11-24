@@ -1,0 +1,7 @@
+PASS overall 87
+line 1 (125): 'A gym asks its 6 a.m. classes when members like to train. Almost all say mornings. What is wrong with the conclusion?'
+  slop: 100
+  characters: 100
+  specificity: 56
+  burstiness: 79
+  structure: 100

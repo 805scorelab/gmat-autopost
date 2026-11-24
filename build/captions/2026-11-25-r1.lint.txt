@@ -1,0 +1,7 @@
+PASS overall 92
+line 1 (125): 'You get 2 equations and want x + y. Do you need both? The trap answer is C.'
+  slop: 100
+  characters: 100
+  specificity: 58
+  burstiness: 100
+  structure: 100

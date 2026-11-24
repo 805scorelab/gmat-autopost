@@ -21,3 +21,5 @@
 | 2026-11-25 | 2026-11-25-s1 | Quant | story | which one is prime: 51 91 57 97 87, trap 91 = 7 x 13 | D |
 | 2026-11-25 | 2026-11-25-c1 | Quant | PS carousel | mixture dilution, 40 L at 25% acid, add water to reach 20%, trap new total 50 | C |
 | 2026-11-25 | 2026-11-25-c2 | Verbal | CR paradox | library open later on weekdays, print borrowing fell; e-book app; trap study rooms | E |
+| 2026-11-25 | 2026-11-25-r1 | DI | DS reel | what is x + y, (1) 2x + 2y = 14 halves to 7, (2) x - y = 1; trap C solving for both letters | A |
+| 2026-11-25 | 2026-11-25-r2 | Verbal | CR flaw reel | gym surveys only its 6 a.m. classes, concludes most members prefer mornings; trap C almost all vs all | A |

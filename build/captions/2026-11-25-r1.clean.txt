@@ -1,0 +1,13 @@
+You get 2 equations and want x + y. Do you need both? The trap answer is C.
+
+Statement 1 is 2 times x plus 2 times y = 14, which is 2 times (x + y) = 14. Divide by 2 and x + y = 7, whatever x and y are. Sufficient. Statement 2 says x - y = 1, and pairs like 5 and 4 or 1 and 0 give different sums. Not sufficient. The answer is A.
+
+Data sufficiency sits in the Data Insights section of the GMAT. When the question asks for a combination like x + y, solve for that combination, not for every letter.
+
+Save this for your next data sufficiency drill.
+
+Original question by 805 Score Lab. Independent. Not affiliated with GMAC.
+Original audio by 805 Score Lab.
+Narration: AI-generated voice; script is our original work.
+
+#GMAT #GMATprep #DataInsights #DataSufficiency #MBA
