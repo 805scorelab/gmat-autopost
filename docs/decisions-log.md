@@ -56,3 +56,8 @@
   (code 4, subcode 2207051) on media_publish yet went live; the live-caption guard recorded each one instead of
   posting it twice. publish_carousel now spaces item containers 8 s apart and waits 20 s before media_publish; on a
   2207051 answer it waits 60 s and checks the profile before treating it as a failure. Reels and Stories unchanged.
+- **Coverage through 31 Jan 2027 (owner, 12:32 ET):** "Make sure the schedule is set up until January 31st 2027."
+  Scheduled tasks: daily Story 12:13 ET, daily carousels 12:41 ET, daily Reels 14:23 ET (each builds tomorrow), plus
+  "805scorelab 3-day buffer" at 16:47 ET, which keeps today and the next 3 days fully queued so one failed run never
+  leaves a gap. None of them has an end date. No daylight-saving change before 8 Mar 2027. The never-expiring token,
+  the hourly publisher and daily commits (which keep GitHub's scheduled workflow active) need no renewal in this window.
