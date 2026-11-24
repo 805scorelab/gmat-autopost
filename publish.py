@@ -362,22 +362,35 @@ METRICS = {"reel": ("reach", "views", "saved", "shares", "total_interactions", "
            "feed": ("reach", "views", "saved", "shares", "total_interactions", "likes", "comments", "follows")}
 
 
-def collect_insights(ig_user_id, limit=40):
+def collect_insights(ig_user_id, limit=20):
+    """Cheap by design (24 Nov): the old version made one call per metric per post (up to 360 calls) right after a
+    publish, which is the likely cause of Meta's "Application request limit reached" on the next carousel. Now one
+    call per post with all metrics; metrics Meta refuses are found once on the first post and remembered."""
     res = call_graph(f"{ig_user_id}/media", {"fields": "id,caption,media_product_type,media_type,timestamp,permalink",
                                               "limit": str(limit)})
-    rows, unavailable, accepted = [], set(), {}
+    try:
+        known = json.load(open(PERF_JSON)).get("accepted", {})
+    except Exception:
+        known = {}
+    rows, unavailable = [], set()
     for media in res.get("data", []):
         kind = "reel" if media.get("media_product_type") == "REELS" else "feed"
-        names = accepted.get(kind, METRICS[kind])
+        if kind not in known:
+            ok = []
+            for name in METRICS[kind]:
+                try:
+                    call_graph(f"{media['id']}/insights", {"metric": name})
+                    ok.append(name)
+                except Exception:
+                    unavailable.add(f"{kind} {name}")
+            known[kind] = ok
         got = {}
-        for name in names:
+        if known[kind]:
             try:
-                data = call_graph(f"{media['id']}/insights", {"metric": name}).get("data", [])
-                for m in data:
+                for m in call_graph(f"{media['id']}/insights", {"metric": ",".join(known[kind])}).get("data", []):
                     got[m["name"]] = (m.get("values") or [{}])[0].get("value", m.get("total_value", {}).get("value"))
-            except Exception:
-                unavailable.add(f"{kind} {name}")
-        accepted.setdefault(kind, [n for n in names if f"{kind} {n}" not in unavailable])
+            except Exception as error:
+                got["error"] = _scrub(str(error))[:80]
         when = utc(media["timestamp"].replace("+0000", "+00:00"))
         rows.append(dict(id=media["id"], kind=kind if kind == "reel" else media.get("media_type", "").lower(),
                          permalink=media.get("permalink"),
@@ -385,7 +398,7 @@ def collect_insights(ig_user_id, limit=40):
                          hours_live=round((datetime.now(timezone.utc) - when).total_seconds() / 3600, 1),
                          caption=(media.get("caption") or "").split("\n")[0][:90], **got))
     return dict(updated_utc=datetime.now(timezone.utc).isoformat(timespec="seconds"), media=rows,
-                unavailable=sorted(unavailable))
+                unavailable=sorted(unavailable), accepted=known)
 
 
 def write_performance(perf):
@@ -560,7 +573,11 @@ def main():
                 break
 
     try:
-        insights_if_stale(ig_user_id)
+        # only in a quiet window: no unpublished post due within the next 3 hours (keeps API calls away from publishes)
+        soon = [p for p in manifest["posts"] if not p.get("published_id")
+                and (utc(p["scheduled_utc"]) - datetime.now(timezone.utc)).total_seconds() < 3 * 3600]
+        if not soon:
+            insights_if_stale(ig_user_id)
     except Exception as error:
         print(f"  insights not refreshed: {_scrub(str(error))[:200]}", file=sys.stderr)
     return 1 if failures else 0

@@ -61,3 +61,8 @@
   "805scorelab 3-day buffer" at 16:47 ET, which keeps today and the next 3 days fully queued so one failed run never
   leaves a gap. None of them has an end date. No daylight-saving change before 8 Mar 2027. The never-expiring token,
   the hourly publisher and daily commits (which keep GitHub's scheduled workflow active) need no renewal in this window.
+- **Rate limit, root cause (24 Nov, 18:10 ET check):** pacing alone did not stop the 2207051 answer on the 18:00
+  carousel (it still went live once and was recorded; run green). Likely cause: the insights refresh made one Graph call
+  per metric per post (up to 360 calls) at the end of a publishing run, exhausting the development-mode app's hourly
+  budget before the next carousel. Insights now use one call per post (20 posts) and run only when nothing is due
+  within 3 hours.
