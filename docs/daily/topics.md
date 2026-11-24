@@ -23,3 +23,13 @@
 | 2026-11-25 | 2026-11-25-c2 | Verbal | CR paradox | library open later on weekdays, print borrowing fell; e-book app; trap study rooms | E |
 | 2026-11-25 | 2026-11-25-r1 | DI | DS reel | what is x + y, (1) 2x + 2y = 14 halves to 7, (2) x - y = 1; trap C solving for both letters | A |
 | 2026-11-25 | 2026-11-25-r2 | Verbal | CR flaw reel | gym surveys only its 6 a.m. classes, concludes most members prefer mornings; trap C almost all vs all | A |
+| 2026-11-26 | 2026-11-26-s1 | Quant | story | which fraction is greatest 3/4 5/7 2/3 7/10 4/5, gap to 1, trap 3/4 | E |
+| 2026-11-26 | 2026-11-26-c1 | Quant | PS carousel | 5 consecutive integers sum 85, largest, trap middle 17 | C |
+| 2026-11-26 | 2026-11-26-r1 | Quant | reel | units digit of 7^23, cycle 7 9 3 1, trap 7 | B |
+| 2026-11-26 | 2026-11-26-c2 | Verbal | CR strengthen | brighter LED streetlights in Ward 4, nighttime crashes fell; comparison wards; trap feel safer | D |
+| 2026-11-26 | 2026-11-26-r2 | DI | DS reel | pens $2 books $5, (1) $19 two splits (2) 5 items; trap A whole numbers | C |
+| 2026-11-27 | 2026-11-27-s1 | Quant | story | 0.2 x 0.3 decimal places, trap 0.6 | B |
+| 2026-11-27 | 2026-11-27-c1 | Quant | PS carousel | overlapping sets 50 students, 28 French 20 Spanish 9 both, neither 11, trap 2 | C |
+| 2026-11-27 | 2026-11-27-r1 | Quant | reel | remainder 5,738 / 9 by digit sum, trap last digit 8 | C |
+| 2026-11-27 | 2026-11-27-c2 | Verbal | CR evaluate | bakery paper boxes, sales up vs same months; other bakeries; trap spring vs winter | B |
+| 2026-11-27 | 2026-11-27-r2 | Verbal | CR weaken reel | phone ban in class, scores rose; daily tutoring; trap phones at lunch | B |

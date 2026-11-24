@@ -1,0 +1,7 @@
+PASS overall 93
+line 1 (125): '28 take French, 20 take Spanish, 9 take both. How many of the 50 take neither?'
+  slop: 100
+  characters: 100
+  specificity: 97
+  burstiness: 69
+  structure: 100

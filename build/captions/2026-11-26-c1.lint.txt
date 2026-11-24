@@ -1,0 +1,7 @@
+PASS overall 89
+line 1 (125): '5 consecutive integers add up to 85. What is the largest one?'
+  slop: 100
+  characters: 100
+  specificity: 75
+  burstiness: 70
+  structure: 100

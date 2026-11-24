@@ -1,0 +1,7 @@
+PASS overall 88
+line 1 (125): 'A school banned phones in class in September. By December, scores rose. Did the ban do it?'
+  slop: 100
+  characters: 100
+  specificity: 61
+  burstiness: 80
+  structure: 100

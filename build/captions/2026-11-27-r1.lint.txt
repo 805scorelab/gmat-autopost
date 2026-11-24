@@ -1,0 +1,7 @@
+PASS overall 92
+line 1 (125): 'What is the remainder when 5,738 is divided by 9? Skip the long division.'
+  slop: 100
+  characters: 100
+  specificity: 70
+  burstiness: 88
+  structure: 100

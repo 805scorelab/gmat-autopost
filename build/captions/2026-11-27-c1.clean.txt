@@ -1,0 +1,13 @@
+28 take French, 20 take Spanish, 9 take both. How many of the 50 take neither?
+
+This is an original GMAT quant overlapping sets problem from 805 Score Lab. Pick A to E on slide 3 before you swipe.
+
+The move: adding 28 and 20 counts the 9 students in both groups twice. Slide 5 removes them once to get 39.
+
+Slide 8 shows the trap answer, 2. It forgets the double count.
+
+Overlapping sets questions appear in GMAT Quant and Data Insights. Save this for your next word problems drill.
+
+Original question by 805 Score Lab. Independent. Not affiliated with GMAC.
+
+#GMAT #GMATprep #GMATquant #MBA

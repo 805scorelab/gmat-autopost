@@ -1,0 +1,13 @@
+Pens cost $2, books cost $5, and you buy at least 1 of each. How many pens?
+
+Statement 1 alone ($19 spent) allows 7 pens with 1 book or 2 pens with 3 books. Statement 2 alone (5 items) allows any split. Together only 2 pens fit, so the answer is C.
+
+The trap answer is A. Whole numbers can still leave 2 answers, so always test a second case.
+
+Data Sufficiency sits in the GMAT Data Insights section. Save this for your next DS set.
+
+Original question by 805 Score Lab. Independent. Not affiliated with GMAC.
+Original audio by 805 Score Lab.
+Narration: AI-generated voice; script is our original work.
+
+#GMAT #GMATprep #DataInsights #DataSufficiency #MBA

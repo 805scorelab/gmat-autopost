@@ -1,0 +1,7 @@
+PASS overall 89
+line 1 (125): 'Brighter streetlights went up and nighttime crashes fell. Did the lights cause it?'
+  slop: 100
+  characters: 100
+  specificity: 65
+  burstiness: 81
+  structure: 100

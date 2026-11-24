@@ -1,0 +1,7 @@
+PASS overall 93
+line 1 (125): 'Pens cost $2, books cost $5, and you buy at least 1 of each. How many pens?'
+  slop: 100
+  characters: 100
+  specificity: 80
+  burstiness: 86
+  structure: 100

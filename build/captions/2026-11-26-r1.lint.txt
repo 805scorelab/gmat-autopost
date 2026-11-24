@@ -1,0 +1,7 @@
+PASS overall 93
+line 1 (125): 'What is the last digit of 7 to the power 23? No calculator needed.'
+  slop: 100
+  characters: 100
+  specificity: 70
+  burstiness: 97
+  structure: 100

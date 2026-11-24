@@ -1,0 +1,13 @@
+5 consecutive integers add up to 85. What is the largest one?
+
+This is an original GMAT quant problem from 805 Score Lab. Pick A to E on slide 3 before you swipe.
+
+The move: with an odd count, the middle number is the average. Slide 4 finds it in 1 step, 85 ÷ 5 = 17.
+
+Slide 8 shows the trap answer, 17. It is the middle of the list, and the question asks for the top.
+
+Consecutive integer questions show up often in GMAT Quant with no calculator. Save this for your next number properties drill.
+
+Original question by 805 Score Lab. Independent. Not affiliated with GMAC.
+
+#GMAT #GMATprep #GMATquant #MBA

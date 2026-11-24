@@ -1,0 +1,13 @@
+What is the last digit of 7 to the power 23? No calculator needed.
+
+Powers of 7 end in 7, 9, 3, 1 and then repeat. The cycle is 4 long, and 23 divided by 4 leaves 3, so the answer is the 3rd digit: 3. The answer is B.
+
+The trap answer is C. A power of 7 ends in 7 only once every 4 powers.
+
+Units digit questions show up in GMAT Quant. Save this for your next number properties drill.
+
+Original question by 805 Score Lab. Independent. Not affiliated with GMAC.
+Original audio by 805 Score Lab.
+Narration: AI-generated voice; script is our original work.
+
+#GMAT #GMATprep #GMATquant #MBA

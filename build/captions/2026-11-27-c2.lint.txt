@@ -1,0 +1,7 @@
+PASS overall 95
+line 1 (125): 'A bakery switched to paper boxes and spring sales rose. What would you need to know?'
+  slop: 100
+  characters: 100
+  specificity: 86
+  burstiness: 91
+  structure: 100
