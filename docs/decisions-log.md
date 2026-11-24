@@ -50,3 +50,9 @@
 - **No approval needed (owner, 23:11 ET):** "Do not need my approval. Just go on and post then." The new music (score
   v1, sampled instruments) and every future post go out without waiting for him. Daily run: docs/daily/daily-run.md,
   run by a scheduled task every afternoon for the next day.
+
+## 24 Nov 2026
+- **Carousel pacing (owner OK, 12:31 ET):** since 23 Nov every carousel got "Application request limit reached"
+  (code 4, subcode 2207051) on media_publish yet went live; the live-caption guard recorded each one instead of
+  posting it twice. publish_carousel now spaces item containers 8 s apart and waits 20 s before media_publish; on a
+  2207051 answer it waits 60 s and checks the profile before treating it as a failure. Reels and Stories unchanged.

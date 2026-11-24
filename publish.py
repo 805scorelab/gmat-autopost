@@ -149,16 +149,40 @@ def caption_of(post):
 
 
 # --------------------------------------------------------------------------------------------------- publishers
+CHILD_GAP_S = 8        # seconds between carousel item containers (owner OK, 24 Nov)
+PUBLISH_GAP_S = 20     # seconds between the finished carousel container and media_publish
+RATE_SUBCODE = "2207051"
+
+
 def publish_carousel(ig_user_id, post, manifest):
+    """Paced (24 Nov): every carousel since 23 Nov drew "Application request limit reached" (code 4, subcode 2207051)
+    on media_publish while still going live, because ~11 requests went out within a few seconds. The item containers
+    are now spaced CHILD_GAP_S apart and the publish call waits PUBLISH_GAP_S, so a carousel takes about 2 minutes."""
     children = []
-    for name in post["media"]:
+    for i, name in enumerate(post["media"]):
+        if i:
+            time.sleep(CHILD_GAP_S)
         params = {"image_url": media_url(manifest, name), "is_carousel_item": "true"}
         children.append(call_graph(f"{ig_user_id}/media", params, method="POST")["id"])
     print(f"  {len(children)} item containers")
+    time.sleep(CHILD_GAP_S)
     parent = call_graph(f"{ig_user_id}/media", {"media_type": "CAROUSEL", "children": ",".join(children),
                                                  "caption": caption_of(post)}, method="POST")["id"]
     wait_until_ready(parent)
-    return publish_container(ig_user_id, parent)
+    time.sleep(PUBLISH_GAP_S)
+    try:
+        return publish_container(ig_user_id, parent)
+    except RuntimeError as error:
+        if RATE_SUBCODE not in str(error):
+            raise
+        # Meta has flagged the burst, but so far the post has still gone live each time. Look before doing anything.
+        print("  rate-limit answer on media_publish; checking whether the post went live anyway")
+        time.sleep(60)
+        live = already_on_instagram(ig_user_id, post, manifest)
+        if live:
+            post["note"] = "media_publish answered 2207051 but the post went live; recorded"
+            return live
+        raise
 
 
 def reel_container(ig_user_id, post, manifest):
@@ -511,6 +535,7 @@ def main():
                 post["published_id"] = live
                 post["published_at_utc"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
                 post["note"] = "found already live on Instagram; not published again"
+                post["last_error"] = None
                 save_manifest(manifest)
                 print(f"  already live as {live}; recorded, NOT published again")
                 continue
