@@ -18,3 +18,4 @@
 | 2026-11-24 | 2026-11-24-c2 | Strategy | pacing carousel | Quant pacing, 20 min after 7 questions, checkpoints 7/14/21 | D |
 | 2026-11-24 | 2026-11-24-r1 | Quant | reel | percent swap shortcut, 28% of 75 = 75% of 28 = 21 | B |
 | 2026-11-24 | 2026-11-24-r2 | Verbal | CR must be true reel | rule finish training -> offer, no offer -> not finished; trap reverses the arrow | A |
+| 2026-11-25 | 2026-11-25-s1 | Quant | story | which one is prime: 51 91 57 97 87, trap 91 = 7 x 13 | D |
