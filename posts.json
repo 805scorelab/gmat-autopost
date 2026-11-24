@@ -247,9 +247,10 @@
       "ground": "mint",
       "grid_position": 9,
       "ai_generated": true,
-      "published_id": null,
+      "published_id": "17878287237650314",
       "attempts": 0,
-      "last_error": null
+      "last_error": null,
+      "published_at_utc": "2026-11-24T02:01:42+00:00"
     },
     {
       "id": "2026-11-24-s1",
