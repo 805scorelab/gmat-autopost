@@ -1,0 +1,7 @@
+PASS overall 94
+line 1 (125): 'A pool cut its fee in half and got 40% more visits. So why did it earn less?'
+  slop: 100
+  characters: 100
+  specificity: 86
+  burstiness: 83
+  structure: 100

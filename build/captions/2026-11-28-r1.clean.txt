@@ -1,0 +1,13 @@
+5 numbers average 12. Remove 1 and the other 4 average 10. Which number did you remove?
+
+Turn each average into a total: 5 x 12 = 60 and 4 x 10 = 40. The gap, 60 - 40 = 20, is the number removed. The answer is D.
+
+The trap answer is A. 2 is how far the average dropped, not the number you took out.
+
+Average questions show up in GMAT Quant with no calculator. Save this for your next statistics drill.
+
+Original question by 805 Score Lab. Independent. Not affiliated with GMAC.
+Original audio by 805 Score Lab.
+Narration: AI-generated voice; script is our original work.
+
+#GMAT #GMATprep #GMATquant #MBA

@@ -1,0 +1,15 @@
+Is the integer n odd? (1) 3n is odd. (2) n + n is even.
+
+Statement 1 is sufficient: 3 x 4 = 12 is even and 3 x 5 = 15 is odd, so an odd 3n means n is odd.
+
+Statement 2 rules nothing out, since 4 + 4 = 8 and 5 + 5 = 10 are both even. The answer is A.
+
+The trap answer is D. Statement 2 is true for every integer, so it gives you no information.
+
+Data Sufficiency sits in the GMAT Data Insights section. Save this for your next DS drill.
+
+Original question by 805 Score Lab. Independent. Not affiliated with GMAC.
+Original audio by 805 Score Lab.
+Narration: AI-generated voice; script is our original work.
+
+#GMAT #GMATprep #DataInsights #DataSufficiency #MBA

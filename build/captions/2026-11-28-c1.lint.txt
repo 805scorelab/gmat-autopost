@@ -1,0 +1,7 @@
+PASS overall 97
+line 1 (125): 'In 5 years, Ana will be twice as old as she was 7 years ago. How old is she now?'
+  slop: 100
+  characters: 100
+  specificity: 93
+  burstiness: 90
+  structure: 100

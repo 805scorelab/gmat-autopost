@@ -1,0 +1,7 @@
+PASS overall 95
+line 1 (125): 'Is the integer n odd? (1) 3n is odd. (2) n + n is even.'
+  slop: 100
+  characters: 100
+  specificity: 75
+  burstiness: 100
+  structure: 100

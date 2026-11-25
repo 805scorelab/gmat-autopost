@@ -1,0 +1,7 @@
+PASS overall 90
+line 1 (125): '5 numbers average 12. Remove 1 and the other 4 average 10. Which number did you remove?'
+  slop: 100
+  characters: 100
+  specificity: 65
+  burstiness: 87
+  structure: 100

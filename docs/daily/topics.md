@@ -33,3 +33,8 @@
 | 2026-11-27 | 2026-11-27-r1 | Quant | reel | remainder 5,738 / 9 by digit sum, trap last digit 8 | C |
 | 2026-11-27 | 2026-11-27-c2 | Verbal | CR evaluate | bakery paper boxes, sales up vs same months; other bakeries; trap spring vs winter | B |
 | 2026-11-27 | 2026-11-27-r2 | Verbal | CR weaken reel | phone ban in class, scores rose; daily tutoring; trap phones at lunch | B |
+| 2026-11-28 | 2026-11-28-s1 | Quant | story | 3 / x = 0.75, x = 4, trap 2.25 multiplying | D |
+| 2026-11-28 | 2026-11-28-c1 | Quant | PS carousel | ages, in 5 years twice as old as 7 years ago, a = 19, trap 12 forgetting the bracket | D |
+| 2026-11-28 | 2026-11-28-r1 | Quant | reel | average of 5 is 12, remove 1, average of 4 is 10, removed 20; trap 2 drop in average | D |
+| 2026-11-28 | 2026-11-28-c2 | Verbal | CR most strongly supported | pool fee halved, visits +40%, income fell (0.5 x 1.4 = 0.7); trap E "should" plan | C |
+| 2026-11-28 | 2026-11-28-r2 | DI | DS reel | is n odd, (1) 3n odd sufficient, (2) n + n even always true; trap D | A |
