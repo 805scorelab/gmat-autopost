@@ -352,9 +352,10 @@
       "ground": "forest",
       "grid_position": 13,
       "ai_generated": true,
-      "published_id": null,
+      "published_id": "18025691156947345",
       "attempts": 0,
-      "last_error": null
+      "last_error": null,
+      "published_at_utc": "2026-11-25T02:00:50+00:00"
     },
     {
       "id": "2026-11-25-s1",
