@@ -541,9 +541,11 @@
       "ground": "paper",
       "grid_position": 20,
       "ai_generated": false,
-      "published_id": null,
+      "published_id": "18121259512789888",
       "attempts": 0,
-      "last_error": null
+      "last_error": null,
+      "note": "media_publish answered 2207051 but the post went live; recorded",
+      "published_at_utc": "2026-11-26T23:03:19+00:00"
     },
     {
       "id": "2026-11-26-r2",
