@@ -471,9 +471,10 @@
         "2026-11-26-s1/2026-11-26-s1.jpg"
       ],
       "ai_generated": false,
-      "published_id": null,
+      "published_id": "18132032542632115",
       "attempts": 0,
-      "last_error": null
+      "last_error": null,
+      "published_at_utc": "2026-11-26T12:30:17+00:00"
     },
     {
       "id": "2026-11-26-c1",
@@ -496,9 +497,11 @@
       "ground": "mint",
       "grid_position": 18,
       "ai_generated": false,
-      "published_id": null,
+      "published_id": "18191465899417038",
       "attempts": 0,
-      "last_error": null
+      "last_error": null,
+      "note": "media_publish answered 2207051 but the post went live; recorded",
+      "published_at_utc": "2026-11-26T13:03:35+00:00"
     },
     {
       "id": "2026-11-26-r1",
