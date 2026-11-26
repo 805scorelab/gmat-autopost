@@ -1,0 +1,7 @@
+PASS overall 96
+line 1 (125): 'Bus A leaves every 12 minutes, bus B every 18. From 8:00 to 11:00, how many times do they leave together?'
+  slop: 100
+  characters: 100
+  specificity: 100
+  burstiness: 81
+  structure: 100

@@ -1,0 +1,13 @@
+A jacket costs $80 after 20% off. What was the price before the discount?
+
+Cut the old price into 5 blocks of 20%. You pay for 4 of them, so 4 blocks are $80, 1 block is $20 and the old price is $100. The answer is D.
+
+The trap answer is C. $96 adds 20% of $80, but the discount was taken from the old price.
+
+Reverse percent questions show up in GMAT Quant with no calculator. Save this for your next percents drill.
+
+Original question by 805 Score Lab. Independent. Not affiliated with GMAC.
+Original audio by 805 Score Lab.
+Narration: AI-generated voice; script is our original work.
+
+#GMAT #GMATprep #GMATquant #MBA

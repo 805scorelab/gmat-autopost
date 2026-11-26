@@ -1,0 +1,13 @@
+Bus A leaves every 12 minutes, bus B every 18. From 8:00 to 11:00, how many times do they leave together?
+
+This is an original GMAT quant word problem from 805 Score Lab on least common multiples. Pick A to E on slide 3 before you swipe.
+
+The move on slide 4: 12 and 18 first meet at 36, so the buses leave together every 36 minutes.
+
+Slide 8 shows the trap answer, 5. That counts the 36-minute gaps, and the 8:00 departure makes it 6.
+
+LCM and counting questions are classic GMAT Quant, with no calculator. Save this for your next number properties drill.
+
+Original question by 805 Score Lab. Independent. Not affiliated with GMAC.
+
+#GMAT #GMATprep #GMATquant #MBA

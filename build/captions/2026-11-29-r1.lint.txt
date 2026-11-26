@@ -1,0 +1,7 @@
+PASS overall 93
+line 1 (125): 'A jacket costs $80 after 20% off. What was the price before the discount?'
+  slop: 100
+  characters: 100
+  specificity: 70
+  burstiness: 97
+  structure: 100

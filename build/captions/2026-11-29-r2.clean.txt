@@ -1,0 +1,15 @@
+A price went up. By what percent? (1) It rose by $12. (2) The new price is $72.
+
+Statement 1 alone fails: $12 on $60 is 20%, but $12 on $40 is 30%. Statement 2 alone gives no old price either.
+
+Together, the old price is 72 - 12 = 60, and 12 out of 60 is 20%. The answer is C.
+
+The trap answer is E. You never see the old price, but new minus increase gives it.
+
+Data Sufficiency sits in the GMAT Data Insights section. Save this for your next DS drill.
+
+Original question by 805 Score Lab. Independent. Not affiliated with GMAC.
+Original audio by 805 Score Lab.
+Narration: AI-generated voice; script is our original work.
+
+#GMAT #GMATprep #DataInsights #DataSufficiency #MBA

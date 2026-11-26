@@ -38,3 +38,8 @@
 | 2026-11-28 | 2026-11-28-r1 | Quant | reel | average of 5 is 12, remove 1, average of 4 is 10, removed 20; trap 2 drop in average | D |
 | 2026-11-28 | 2026-11-28-c2 | Verbal | CR most strongly supported | pool fee halved, visits +40%, income fell (0.5 x 1.4 = 0.7); trap E "should" plan | C |
 | 2026-11-28 | 2026-11-28-r2 | DI | DS reel | is n odd, (1) 3n odd sufficient, (2) n + n even always true; trap D | A |
+| 2026-11-29 | 2026-11-29-s1 | Quant | story | 15% of 80 = 10% + 5% = 12, trap 8 stopping at 10% | C |
+| 2026-11-29 | 2026-11-29-c1 | Quant | PS carousel | buses every 12 and 18 min, together 8:00 to 11:00 inclusive, LCM 36, 6 times; trap 5 counting gaps | C |
+| 2026-11-29 | 2026-11-29-r1 | Quant | reel | reverse percent, $80 after 20% off, original $100; trap $96 adding 20% of 80 | D |
+| 2026-11-29 | 2026-11-29-c2 | Verbal | CR assumption | Marlow Books 5-day to 2-day delivery to win customers back; negation test; trap D costs | B |
+| 2026-11-29 | 2026-11-29-r2 | DI | DS reel | percent increase, (1) up $12 (2) new $72, together old 60 -> 20%; trap E | C |

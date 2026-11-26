@@ -1,0 +1,7 @@
+PASS overall 88
+line 1 (125): 'Marlow Books lost customers, so it plans 2-day delivery instead of 5. What must be true for that to work?'
+  slop: 100
+  characters: 100
+  specificity: 75
+  burstiness: 67
+  structure: 100
