@@ -456,9 +456,10 @@
       "ground": "paper",
       "grid_position": 17,
       "ai_generated": true,
-      "published_id": null,
+      "published_id": "18366345979247875",
       "attempts": 0,
-      "last_error": null
+      "last_error": null,
+      "published_at_utc": "2026-11-26T02:00:51+00:00"
     },
     {
       "id": "2026-11-26-s1",
