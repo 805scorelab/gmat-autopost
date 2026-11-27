@@ -12,6 +12,35 @@ Read `docs/decisions-log.md` first: anything newer there outranks this file.
    `api_block`, `duplicate_published_ids`, posts with `attempts >= 1`, and anything overdue. If `api_block` is set,
    queue nothing new and tell the owner plainly: only he can clear Meta's checkpoint.
 
+## 0.5 Weekly content plan (owner, 26 Nov: grad school content and memes, "anything that will help us grow")
+| Day | 08:00 carousel c1 | 12:30 Reel r1 | 18:00 carousel c2 | 21:00 Reel r2 |
+|---|---|---|---|---|
+| Mon | Quant/DI | GMAT question | Verbal | **Grad school** |
+| Tue | Quant/DI | GMAT question | **Meme** | GMAT question |
+| Wed | Quant/DI | GMAT question | **Grad school** | **Meme** |
+| Thu | Verbal | GMAT question | Quant/DI | **Grad school** |
+| Fri | Quant/DI | GMAT question | **Meme** | GMAT question |
+| Sat | Quant/DI | GMAT question | **Grad school** | **Grad school** |
+| Sun | Verbal | GMAT question | **Grad school** | **Meme** |
+Per week: 9 GMAT Reels, 3 grad school Reels, 2 meme Reels; 9 GMAT carousels, 3 grad school, 2 meme. Stories stay the
+daily GMAT quiz. Strategy (timing, pacing) can replace one GMAT carousel a week. This table outranks the section
+labels in the slot table below and in the daily task prompts.
+
+**Grad school posts** (MBA and master's admissions, applications, deadlines, schools, careers, surprising facts):
+every fact must be true and current, looked up the same day on a primary source (the school's own class profile or
+admissions page, GMAC reports, official statistics), named in the caption ("Source: <school or body>, <year>") and
+linked with the date checked in the rights note. No invented or rounded-up numbers, no rankings without the ranking's
+name and year, no admissions promises, no school logos (names used descriptively only). If a fact can't be verified
+today, pick another fact. Grad school Reels: voiced, v2 visuals, a "guess first" moment (e.g. "Guess the average
+GMAT at this school" with 10 s on a timer) before the reveal, then the follow card.
+
+**Memes**: relatable GMAT and application humour in ORIGINAL formats we draw ourselves: text panels ("Nobody: /
+GMAT Data Sufficiency:"), expectation vs reality split panels, chat bubbles, "POV:" scenes with our own simple shapes,
+tier lists, timers. Never a copyrighted meme image, movie/TV still, real person's photo, celebrity, brand logo or
+recognisable character. Never punch down (no jokes about nationalities, gender, money or anyone's score). A meme
+carousel is 2 to 4 slides: the meme, then a real, useful takeaway slide. A meme Reel ends with the takeaway and the
+follow card. Captions still pass the lint.
+
 ## 1. Plan tomorrow (US Eastern)
 | ET | Format | Rule |
 |---|---|---|
@@ -40,6 +69,19 @@ publish order 08:00 carousel, 12:30 reel, 18:00 carousel, 21:00 reel. Update the
 - Carousels: `build/posts/<id>.py` using `brand.Deck` and `parts` (cover hook 6 words or fewer; stake; question;
   3 to 5 solve slides, one idea each; answer with the filled bubble; trap; recap; CTA). Run it: `check: PASS`.
   Open a contact sheet and look at it. Fix anything ugly or crowded.
+- Reels: **v2 standard (owner, 26 Nov: "more animation", "more time to read and solve", "a follow invite at the end")**.
+  Reference script: `build/posts/sample-v2-weighted.py`. For every GMAT question Reel:
+  1. hook: the question as a picture, on screen at frame 0;  2. "Pick one" with the choices;
+  3. **solving time: `Beat("You have twenty seconds. Go.", reelkit.think_scene(question_html, 20), think=20)`** with
+     the full question and choices on screen while the timer counts down (25 s for a long Verbal stimulus);
+  4. the trap, crossed out;  5. the solve as moving diagrams (counters, bars, number lines, icons that pop),
+     a new visual event at least every 2 seconds;  6. the answer with the filled bubble;  7. the shortcut;
+  8. **`reelkit.follow_card(letter)` with the line "Follow for a new question every day."**
+  The engine adds kinetic word-by-word subtitles (numbers shown as digits), an ambient moving background and
+  ticks in the last 5 s of solving time. Scenes must fit the smaller zone (top 150 to 1310 px) above the subtitles.
+  Target 45 to 75 s (gate 20 to 90 s). The old 3-second COUNTDOWN is retired. Narrator pitfalls: "what's"/"that's"
+  are expanded automatically; a plural noun right after a number ("twenty students") gets dropped, so rephrase
+  ("a class of twenty"); a bare letter at the end of a line gets dropped ("So it is answer C." passes).
 - Reels: `build/posts/<id>.py` using `reel.Beat` / `reel.build`, **voiced** (owner, 21 Nov: voiceover on every Reel).
   Spoken lines write every number in words ("twenty percent", "one hundred dollars"); on-screen text uses digits.
   Hook = the question, on screen at frame 0. Every beat has a picture that acts the idea out. 25 to 45 s. Score v1
