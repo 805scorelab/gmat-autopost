@@ -43,3 +43,8 @@
 | 2026-11-29 | 2026-11-29-r1 | Quant | reel | reverse percent, $80 after 20% off, original $100; trap $96 adding 20% of 80 | D |
 | 2026-11-29 | 2026-11-29-c2 | Verbal | CR assumption | Marlow Books 5-day to 2-day delivery to win customers back; negation test; trap D costs | B |
 | 2026-11-29 | 2026-11-29-r2 | Meme | meme reel | DS expectation vs reality; (2) 2x + 2y = 20 repeats (1) x + y = 10; DS asks can it be found, stop early | - |
+| 2026-11-30 | 2026-11-30-s1 | Quant | story | 2^10 = 1024 by doubling, trap 20 (2 x 10) | D |
+| 2026-11-30 | 2026-11-30-c1 | Quant | PS carousel | exponents 3^x 9^y = 3^12, x - y = 3, rewrite 9 = 3^2, x = 6; trap 7.5 reading 9^y as 3^y | C |
+| 2026-11-30 | 2026-11-30-r1 | Quant | reel | multiples of 3 or 5 from 1 to 100, 33 + 20 - 6 = 47; trap 53 counting the 15s twice | B |
+| 2026-11-30 | 2026-11-30-c2 | Verbal | CR weaken | Fernhill Café loyalty app, spend per visit +15%; rival cause: drink prices up 15%; trap E downloads | C |
+| 2026-11-30 | 2026-11-30-r2 | Grad school | guess-first reel | Wharton MBA Class of 2028 average 5 years of work experience, range 1 to 15; no minimum GMAT or GRE (source Wharton class profile as of 9 Nov 2026, checked 27 Nov) | B |

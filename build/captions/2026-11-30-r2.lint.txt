@@ -1,0 +1,7 @@
+PASS overall 93
+line 1 (125): "Guess the average years of work experience in Wharton's newest MBA class before the reveal."
+  slop: 100
+  characters: 100
+  specificity: 76
+  burstiness: 90
+  structure: 100

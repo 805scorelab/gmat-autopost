@@ -1,0 +1,7 @@
+PASS overall 93
+line 1 (125): 'From 1 to 100, how many numbers are multiples of 3 or 5? Pause the Reel and count before the reveal.'
+  slop: 100
+  characters: 100
+  specificity: 80
+  burstiness: 83
+  structure: 100

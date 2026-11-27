@@ -1,0 +1,7 @@
+PASS overall 96
+line 1 (125): 'If 3^x times 9^y equals 3^12 and x minus y is 3, what is x? One base is hiding in plain sight.'
+  slop: 100
+  characters: 100
+  specificity: 93
+  burstiness: 89
+  structure: 100

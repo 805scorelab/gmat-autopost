@@ -1,0 +1,13 @@
+From 1 to 100, how many numbers are multiples of 3 or 5? Pause the Reel and count before the reveal.
+
+There are 33 multiples of 3 and 20 multiples of 5. The 6 multiples of 15 sit in both lists, so 33 + 20 - 6 = 47. The answer is B.
+
+The trap answer is C. 53 adds both lists and counts 15, 30, 45, 60, 75 and 90 twice.
+
+Overlap counting like this shows up in GMAT Quant with no calculator. Save this for your next number properties drill.
+
+Original question by 805 Score Lab. Independent. Not affiliated with GMAC.
+Original audio by 805 Score Lab.
+Narration: AI-generated voice; script is our original work.
+
+#GMAT #GMATprep #GMATquant #MBA

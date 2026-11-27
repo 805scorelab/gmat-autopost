@@ -1,0 +1,13 @@
+If 3^x times 9^y equals 3^12 and x minus y is 3, what is x? One base is hiding in plain sight.
+
+This is an original GMAT quant exponents question from 805 Score Lab. Pick A to E on slide 3 before you swipe.
+
+The move on slide 4: write 9 as 3^2, so 9^y becomes 3^(2y) and the exponents give x + 2y = 12.
+
+Slide 8 shows the trap answer, 7.5. It reads 9^y as 3^y and loses the factor of 2.
+
+Exponent rules come up often in GMAT Quant, with no calculator. Save this for your next exponents drill.
+
+Original question by 805 Score Lab. Independent. Not affiliated with GMAC.
+
+#GMAT #GMATprep #GMATquant #MBA
