@@ -66,3 +66,14 @@
   per metric per post (up to 360 calls) at the end of a publishing run, exhausting the development-mode app's hourly
   budget before the next carousel. Insights now use one call per post (20 posts) and run only when nothing is due
   within 3 hours.
+
+## 26 Nov 2026 (owner, 19:37 ET)
+- **Reels v2:** more animation ("more things going on"), a follow invite at the end, and real time to read and solve
+  (about 20 seconds, not 3). Implemented: reel.py adds an ambient moving background, kinetic word-by-word subtitles
+  (digits on screen), `think=` solving time with ticks; reelkit adds `timer`, `think_scene`, `follow_card`. Duration
+  gate 20 to 90 s. Reference: build/posts/sample-v2-weighted.py. Standard in docs/daily/daily-run.md.
+- **New content:** grad school (applications, schools, surprising facts) and memes, "anything that will help us grow".
+  Weekly plan in docs/daily/daily-run.md section 0.5: 3 grad school Reels + 3 grad school carousels, 2 meme Reels + 2
+  meme carousels per week; the rest GMAT. Facts are sourced on primary sources the same day; memes use only our own
+  drawn formats (no copyrighted meme images, no real people). The bio's promise "every post is a question with a
+  worked answer" no longer fits: the owner should update the Instagram bio by hand (the API can't).

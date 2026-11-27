@@ -48,6 +48,7 @@ class Beat:
     caption: str = ""              # on-screen line for the silent variant (defaults to the narration)
     pad_after: float = 0.35        # silence after the line
     min_len: float = 0.0           # hold the scene at least this long (e.g. a think pause)
+    think: int = 0                 # seconds of solving time after the line (owner, 26 Nov: about 20 s for a question)
 
 
 def reel_css():
@@ -58,6 +59,20 @@ def reel_css():
     .zone .bubble{width:118px;height:118px;font-size:56px;border-width:7px}
     .zone .bubbles{gap:26px}
     .cap{position:absolute;left:72px;right:140px;top:1320px;font:600 44px/1.3 Inter;color:#fff;opacity:.92}
+    .subs .zone{bottom:610px}
+    .sub{position:absolute;left:72px;right:140px;top:1340px;text-align:center;font:800 58px/1.18 Montserrat;
+      letter-spacing:-.01em;color:#fff;opacity:0}
+    .sub .w{display:inline-block;margin:0 .14em;color:rgba(255,255,255,.55)}
+    @keyframes chunk{0%{opacity:0;transform:translateY(16px)}6%,94%{opacity:1;transform:none}100%{opacity:0}}
+    @keyframes word{0%{color:rgba(255,255,255,.55);transform:scale(1)}30%{color:#BFFBD1;transform:scale(1.08)}
+      100%{color:#fff;transform:scale(1)}}
+    .bg{position:absolute;inset:0;overflow:hidden}
+    .bg .dots{position:absolute;inset:-120px;background-image:radial-gradient(rgba(191,251,209,.10) 3px,transparent 3.5px);
+      background-size:60px 60px}
+    .bg .blob{position:absolute;width:760px;height:760px;border-radius:50%;filter:blur(90px);opacity:.16}
+    @keyframes dotdrift{from{transform:translate(0,0)}to{transform:translate(60px,-120px)}}
+    @keyframes blobA{0%{transform:translate(-200px,100px)}50%{transform:translate(380px,520px)}100%{transform:translate(-200px,100px)}}
+    @keyframes blobB{0%{transform:translate(520px,1300px)}50%{transform:translate(60px,820px)}100%{transform:translate(520px,1300px)}}
     .big{font:800 118px/1.04 Montserrat;letter-spacing:-.025em}
     .mid{font:700 76px/1.2 Montserrat}
     .mint{color:#BFFBD1}
@@ -74,18 +89,103 @@ def reel_css():
     """
 
 
-def frame_html(beat, show_caption, cap_text, p0=0.0, p1=1.0, seconds=3.0):
-    """p0..p1: the progress bar's start and end (fraction of the Reel) during this beat. The bar and a slow push-in
-    on the scene keep the picture moving between animations (motion gate)."""
+def background(t0, seconds):
+    """Ambient motion behind every scene (owner, 26 Nov: "more animation, more things going on"): a drifting mint dot
+    grid and two slow glows. Their phase continues across beats (negative delays), so cuts don't jump."""
+    return (f'<div class=bg><div class="dots a" style="animation:dotdrift 12s linear {-t0:.2f}s infinite"></div>'
+            f'<div class="blob a" style="background:#01774D;animation:blobA 26s ease-in-out {-t0:.2f}s infinite"></div>'
+            f'<div class="blob a" style="background:#BFFBD1;animation:blobB 31s ease-in-out {-t0:.2f}s infinite"></div></div>')
+
+
+_UNITS = {w: i for i, w in enumerate("zero one two three four five six seven eight nine ten eleven twelve thirteen "
+                                       "fourteen fifteen sixteen seventeen eighteen nineteen".split())}
+_TENS = {w: 10 * i for i, w in enumerate("_ _ twenty thirty forty fifty sixty seventy eighty ninety".split()) if i > 1}
+
+
+def digits_for_screen(line):
+    """On screen numbers are digits (brand rule), while the narrator needs words: 'one thousand four hundred' -> 1400,
+    'seventy-six' -> 76, 'twenty percent' -> 20%, 'eighty dollars' -> $80. Single words like 'one class' stay words."""
+    tokens = re.findall(r"[A-Za-z]+(?:-[A-Za-z]+)?|[^A-Za-z\s]+|\s+", line)
+    out, i = [], 0
+    while i < len(tokens):
+        if tokens[i].isspace():
+            out.append(tokens[i])
+            i += 1
+            continue
+        j, total, current, used = i, 0, 0, 0
+        while j < len(tokens):
+            t = tokens[j].lower()
+            if t.isspace():
+                j += 1
+                continue
+            parts = t.split("-")
+            if all(p in _UNITS or p in _TENS for p in parts) and len(parts) <= 2:
+                current += sum(_UNITS.get(p, _TENS.get(p, 0)) for p in parts)
+            elif t == "hundred" and used:
+                current *= 100
+            elif t == "thousand" and used:
+                total += current * 1000
+                current = 0
+            else:
+                break
+            used += 1
+            j += 1
+        value = total + current
+        if used and (used > 1 or value >= 13 or "-" in tokens[i]):
+            while tokens[j - 1].isspace():
+                j -= 1
+            nxt = "".join(tokens[j:j + 2]).strip().lower()
+            if nxt.startswith("percent"):
+                out.append(f"{value}%")
+                j += 2
+            elif nxt.startswith("dollars"):
+                out.append(f"${value}")
+                j += 2
+            else:
+                out.append(str(value))
+            i = j
+        else:
+            out.append(tokens[i])
+            i += 1
+    return "".join(out)
+
+
+def subtitle_html(line, spoken_s, start=0.0, chunk_words=5):
+    """Kinetic captions for the narration: chunks of up to 5 words, each word lighting up in time with the voice.
+    Word timing is proportional to its length within the spoken part of the line."""
+    words = digits_for_screen(line).split()
+    if not words or spoken_s <= 0:
+        return ""
+    weights = [len(w.strip(".,?!:;")) + 2 for w in words]
+    total = sum(weights)
+    t, times = start, []
+    for w in weights:
+        times.append(t)
+        t += spoken_s * w / total
+    out = ""
+    for c in range(0, len(words), chunk_words):
+        ws = words[c:c + chunk_words]
+        c0 = times[c]
+        c1 = times[c + len(ws)] if c + len(ws) < len(times) else start + spoken_s + 0.25
+        spans = "".join(f'<span class="w a" style="animation:word .45s {times[c + i]:.2f}s both">{w}</span>'
+                        for i, w in enumerate(ws))
+        out += f'<div class="sub a" style="animation:chunk {c1 - c0:.2f}s {c0:.2f}s both">{spans}</div>'
+    return out
+
+
+def frame_html(beat, show_caption, cap_text, p0=0.0, p1=1.0, seconds=3.0, t0=0.0, spoken_s=0.0, subs=False):
+    """p0..p1: the progress bar's start and end (fraction of the Reel) during this beat. The bar, the ambient
+    background and a slow push-in on the scene keep the picture moving between animations (motion gate)."""
     cap = f'<div class=cap>{cap_text}</div>' if show_caption and cap_text else ""
+    sub = subtitle_html(beat.line, spoken_s) if subs else ""
     prog = (f"<style>@keyframes pg{{from{{width:{p0 * 100:.2f}%}}to{{width:{p1 * 100:.2f}%}}}}"
             f"@keyframes kb{{from{{transform:scale(1)}}to{{transform:scale(1.045)}}}}</style>"
             f'<div style="position:absolute;top:96px;left:72px;right:140px;height:8px;background:#1c1c1c;border-radius:4px">'
             f'<div class=a style="height:100%;background:#BFFBD1;border-radius:4px;animation:pg {seconds:.2f}s linear both">'
             f"</div></div>")
-    return (f"<style>{reel_css()}</style><div class=frame>{prog}"
+    return (f"<style>{reel_css()}</style><div class=\"frame{' subs' if subs else ''}\">{background(t0, seconds)}{prog}"
             f'<div class=zone style="transform-origin:30% 30%;animation:kb {seconds:.2f}s linear both">{beat.scene}</div>'
-            f"{cap}</div>")
+            f"{cap}{sub}</div>")
 
 
 async def render_frames(pages_and_lengths, out_dir):
@@ -101,9 +201,11 @@ async def render_frames(pages_and_lengths, out_dir):
             await page.set_content(html)
             await page.evaluate("document.fonts.ready")
             bad = await page.evaluate("() => { const z = document.querySelector('.zone');"
-                                      " return z.scrollHeight > z.clientHeight + 1 || z.scrollWidth > z.clientWidth + 1; }")
+                                      " return (z.scrollHeight > z.clientHeight + 1 || z.scrollWidth > z.clientWidth + 1)"
+                                      " ? [z.scrollWidth, z.scrollHeight, z.clientWidth, z.clientHeight] : null; }")
             if bad:
-                raise RuntimeError("scene overflows the safe zone")
+                raise RuntimeError(f"scene {len(motion) and pages_and_lengths.index((html, seconds))} overflows the safe "
+                                   f"zone: content {bad[0]}x{bad[1]} in {bad[2]}x{bad[3]}")
             n = int(round(seconds * FPS))
             for f in range(n):
                 t_ms = f * 1000 / FPS
@@ -157,31 +259,37 @@ def cached_say(line, path):
     return x, take
 
 
-def build(reel_id, beats, cover_html, voiced=True, seed=1, out_root=None, music_level=0.16):
+def build(reel_id, beats, cover_html, voiced=True, seed=1, out_root=None, music_level=0.16, subtitles=True):
     out = pathlib.Path(out_root or ROOT / "out" / reel_id)
     out.mkdir(parents=True, exist_ok=True)
-    takes, voice_parts, lengths = [], [], []
+    takes, voice_parts, lengths, spoken = [], [], [], []
     for i, b in enumerate(beats):
         if voiced:
             x, take = cached_say(b.line, out / f"line{i:02d}.wav")
             takes.append(take)
-            seg = np.concatenate([x, np.zeros(int(b.pad_after * VSR), np.float32)])
+            spoken.append(len(x) / VSR)
+            seg = np.concatenate([x, np.zeros(int((b.pad_after + b.think) * VSR), np.float32)])
+            if b.think:                                    # soft ticks in the last 5 seconds of solving time
+                start = len(x) / VSR + b.pad_after
+                b.sfx = list(b.sfx) + [("tick", start + b.think - k) for k in range(5, 0, -1)]
         else:
             words = len(b.line.split())
-            seg = np.zeros(int((0.9 + words * 0.36 + b.pad_after) * VSR), np.float32)   # reading time
+            seg = np.zeros(int((0.9 + words * 0.36 + b.pad_after + b.think) * VSR), np.float32)   # reading time
+            spoken.append(0.0)
         if len(seg) < b.min_len * VSR:
             seg = np.concatenate([seg, np.zeros(int(b.min_len * VSR) - len(seg), np.float32)])
         voice_parts.append(seg)
         lengths.append(len(seg) / VSR)
     total = sum(lengths) + 0.6
-    if not 20 <= total <= 45:
-        raise RuntimeError(f"duration {total:.1f} s outside 20 to 45 s")
+    if not 20 <= total <= 90:
+        raise RuntimeError(f"duration {total:.1f} s outside 20 to 90 s")
 
     # pictures
     lengths[-1] += 0.6
     pages, t0 = [], 0.0
-    for b, L in zip(beats, lengths):
-        pages.append((frame_html(b, not voiced, b.caption or b.line, t0 / total, (t0 + L) / total, L), L))
+    for b, L, sp in zip(beats, lengths, spoken):
+        pages.append((frame_html(b, not voiced, b.caption or b.line, t0 / total, (t0 + L) / total, L, t0, sp,
+                                 subs=voiced and subtitles), L))
         t0 += L
     frames_dir = out / "frames"
     for f in frames_dir.glob("*.jpg"):

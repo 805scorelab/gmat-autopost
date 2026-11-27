@@ -27,7 +27,7 @@ SR = 24000
 ENV = dict(os.environ, LD_LIBRARY_PATH=f"{SHERPA}/lib")
 
 # Words Kokoro (through sherpa's lexicon) drops or garbles, found by the word check. Expanded before synthesis.
-EXPAND = {r"\bwhat's\b": "what is", r"\bWhat's\b": "What is"}   # 21 Nov: "what's" was silent in 4 of 4 takes
+EXPAND = {r"\bwhat's\b": "what is", r"\bWhat's\b": "What is", r"\bthat's\b": "that is", r"\bThat's\b": "That is"}   # 21 Nov: "what's" was silent in 4 of 4 takes
 
 ONES = "zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen " \
        "seventeen eighteen nineteen".split()
@@ -52,6 +52,7 @@ def num_words(n):
 def norm(text):
     """Compare words, not formatting: numbers spelled out, $N read as 'N dollars', % as 'percent', '2n' as '2 n'."""
     text = text.lower().replace("\u2019", "'").replace("-", " ").replace("\u2212", " minus ")
+    text = re.sub(r"(\d),(\d{3})", r"\1\2", text)          # 1,400 -> 1400
     text = re.sub(r"\$(\d+)", r"\1 dollars", text)
     text = text.replace("%", " percent")
     text = re.sub(r"(\d)([a-z])\b", r"\1 \2", text)
