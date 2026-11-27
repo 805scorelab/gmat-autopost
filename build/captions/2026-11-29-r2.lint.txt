@@ -1,7 +1,7 @@
-PASS overall 92
-line 1 (125): 'A price went up. By what percent? (1) It rose by $12. (2) The new price is $72.'
+PASS overall 90
+line 1 (125): 'Data Sufficiency, expectation vs reality.'
   slop: 100
   characters: 100
-  specificity: 66
-  burstiness: 93
+  specificity: 65
+  burstiness: 87
   structure: 100

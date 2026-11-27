@@ -8,6 +8,8 @@ Trap: C ($96), adding 20% of the sale price (80 + 16) instead of working from th
 Difficulty: our estimate, easy to medium.
 Quality-log improvements applied (previous rows: lit tiles with mix-blend text read blue; 43.7 s too long): lit
 blocks use a fixed dark text colour, and the script is kept short (target about 35 s).
+v2 upgrade (27 Nov, owner standard of 26 Nov): 20 s think_scene replaces the 3 s countdown, follow_card ends
+the Reel; the -20% chip is on screen at frame 0 (quality-log next step).
 Usage: python3 posts/2026-11-29-r1.py
 """
 import json
@@ -16,7 +18,7 @@ import pathlib
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1]))
 from brand import bubbles
 from reel import Beat, build
-from reelkit import COUNTDOWN, MINT, RED, choice_list, cover, save_beat_scene, strike
+from reelkit import MINT, RED, choice_list, cover, follow_card, strike, think_scene
 
 ID = "2026-11-29-r1"
 CHOICES = [("A", "$64"), ("B", "$88"), ("C", "$96"), ("D", "$100"), ("E", "$120")]
@@ -62,7 +64,7 @@ def counter(vals, start, step, color=MINT, size=120, label=""):
 TAG = ('<div style="display:flex;align-items:center;gap:30px">'
        '<div style="padding:18px 40px;border-radius:26px;background:#fff;color:#111;font:800 130px Montserrat">$80</div>'
        '<div class=a style="padding:12px 28px;border-radius:20px;background:#ff6b6b;color:#111;'
-       'font:800 76px Montserrat;animation:pop .4s .6s both">−20%</div></div>')
+       'font:800 76px Montserrat">−20%</div></div>')
 
 HOOK = ('<div class=big style="font-size:92px">After 20% off,<br>a jacket is:</div>'
         f'<div style="margin-top:40px">{TAG}</div>'
@@ -71,13 +73,18 @@ HOOK = ('<div class=big style="font-size:92px">After 20% off,<br>a jacket is:</d
           'Price <span style="color:#ffd166">before</span>?</div>'
         + f'<div style="margin-top:40px">{bubbles()}</div>')
 
+QUESTION_SMALL = (
+    '<div style="font:700 46px/1.3 Inter">After 20% off, a jacket costs $80.<br>'
+    '<b>Price before the discount?</b></div>'
+    + choice_list(CHOICES, animate=False, font="800 50px Montserrat", gap=0))
+
 beats = [
     Beat("A jacket is on sale for twenty percent off. It now costs eighty dollars. What was the price before the discount?",
-         HOOK, sfx=[("pop", 0.6), ("pop", 3.0)]),
+         HOOK, sfx=[("pop", 3.0)]),
     Beat("Pick one.", '<div class="mid a" style="animation:in .4s both">Pick one</div>'
          + choice_list(CHOICES, font="800 80px Montserrat", gap=26),
          sfx=[("pop", t) for t in (0, .18, .36, .54, .72)], min_len=2.0),
-    Beat("Three seconds.", COUNTDOWN, sfx=[("tick", 0.0), ("tick", 1.0), ("tick", 2.0)], min_len=3.2),
+    Beat("You have twenty seconds. Go.", think_scene(QUESTION_SMALL, 20, delay=1.6), think=20),
     Beat("Cut the old price into five equal blocks. The discount takes one block away. You pay for the other four.",
          '<div class=mid>Old price = 5 blocks of 20%.</div>'
          + blocks(["20%"] * 5, light=(0, 1, 2, 3), start=1.2, step=0.35, cross=(4, 2.8))
@@ -95,7 +102,7 @@ beats = [
          + '<div class="big a" style="font-size:120px;margin-top:50px;animation:pop .45s 1.4s both">'
            '5 × 20 = <span class=mint>$100</span></div>'
            '<div class=a style="margin-top:30px;animation:in .4s 2.2s both">'
-         + choice_list(CHOICES, highlight="D", animate=False, font="800 54px Montserrat", gap=8) + '</div>',
+         + bubbles("D") + '</div>',
          sfx=[("pop", 0.9), ("ding", 1.4)]),
     Beat("The trap is answer C. Ninety-six adds twenty percent of eighty, but the discount came off the old price.",
          '<div class="big a" style="font-size:104px;animation:in .4s both">Trap: <span class=mint>C</span></div>'
@@ -104,7 +111,8 @@ beats = [
          '<p class=a style="margin-top:40px;font-size:58px;animation:in .4s 1.0s both">16 is 20% of the wrong price.</p>'
          '<p class=a style="margin-top:14px;font-size:58px;animation:in .4s 2.6s both">Take 20% of the '
          '<span class=mint>old</span> price: 100 − 20 = 80 ✓</p>', sfx=[("thump", 1.6)]),
-    Beat("Save this for your next percent question.", save_beat_scene("D"), sfx=[("pop", 0.1)], pad_after=0.6),
+    Beat("Follow for a new question every day.", follow_card("D"), sfx=[("pop", 0.6), ("ding", 2.3)],
+         pad_after=1.2),
 ]
 
 COVER = cover("forest", "Trap Answer", "$80 after<br>20% off.<br>Price before?", 118)

@@ -1,15 +1,17 @@
-Is the integer n odd? (1) 3n is odd. (2) n + n is even.
+Guess the average GMAT Focus score in Stanford's newest MBA class before the reveal.
 
-Statement 1 is sufficient: 3 x 4 = 12 is even and 3 x 5 = 15 is odd, so an odd 3n means n is odd.
+The answer is 695. The Stanford MBA Class of 2028 has 436 students, and their GMAT Focus scores range from 535 to 805.
 
-Statement 2 rules nothing out, since 4 + 4 = 8 and 5 + 5 = 10 are both even. The answer is A.
+The same class averaged 743 on the older GMAT. Two versions of the test, two different scales.
 
-The trap answer is D. Statement 2 is true for every integer, so it gives you no information.
+So if you took GMAT Focus, compare your score with Focus figures in a class profile, not with the older GMAT column.
 
-Data Sufficiency sits in the GMAT Data Insights section. Save this for your next DS drill.
+Source: Stanford GSB, MBA Entering Class Profile, Class of 2028 (data as of 17 Sep 2026).
 
-Original question by 805 Score Lab. Independent. Not affiliated with GMAC.
+Save this for when you build your school list.
+
+Independent. Not affiliated with GMAC or Stanford.
 Original audio by 805 Score Lab.
 Narration: AI-generated voice; script is our original work.
 
-#GMAT #GMATprep #DataInsights #DataSufficiency #MBA
+#GMAT #GMATFocus #MBA #MBAadmissions #Stanford

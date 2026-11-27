@@ -1,14 +1,14 @@
-A price went up. By what percent? (1) It rose by $12. (2) The new price is $72.
+Data Sufficiency, expectation vs reality.
 
-Statement 1 alone fails: $12 on $60 is 20%, but $12 on $40 is 30%. Statement 2 alone gives no old price either.
+In DS you never need the value itself. You only need to know whether it can be found.
 
-Together, the old price is 72 - 12 = 60, and 12 out of 60 is 20%. The answer is C.
+Example: statement (1) says x + y = 10 and statement (2) says 2 times (x + y) = 20. Divide (2) by 2 and you get (1) again, so (2) adds nothing.
 
-The trap answer is E. You never see the old price, but new minus increase gives it.
+Once you know a single value exists, stop solving and pick your letter. Those saved minutes go to the harder questions in Data Insights.
 
-Data Sufficiency sits in the GMAT Data Insights section. Save this for your next DS drill.
+Save this for your next DS set.
 
-Original question by 805 Score Lab. Independent. Not affiliated with GMAC.
+Original meme by 805 Score Lab. Independent. Not affiliated with GMAC.
 Original audio by 805 Score Lab.
 Narration: AI-generated voice; script is our original work.
 
